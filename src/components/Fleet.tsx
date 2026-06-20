@@ -58,33 +58,47 @@ export default function Fleet({
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {vehicles.map(({ key, icon, seats, bags }) => {
-            const vehicle = (dict.fleet as any)[key];
+            const vehicle = (dict.fleet as any)?.[key];
+            if (!vehicle) return null;
             return (
               <div
                 key={key}
-                className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-gold-200 hover:-translate-y-2"
+                className="group relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-gold-300 hover:-translate-y-3"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-gold-100 to-transparent rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-gold-50 to-transparent rounded-tr-3xl rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute -top-3 -right-3 w-12 h-12 bg-gold-500 rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 shadow-lg shadow-gold-500/30">
+                  <svg className="w-5 h-5 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
 
-                <div className="w-20 h-20 bg-navy-50 rounded-2xl flex items-center justify-center text-navy-600 group-hover:bg-navy-900 group-hover:text-gold-400 transition-all duration-500 mb-6">
+                <div className="w-20 h-20 bg-navy-50 rounded-2xl flex items-center justify-center text-navy-600 group-hover:bg-navy-900 group-hover:text-gold-400 transition-all duration-500 mb-6 group-hover:scale-110 group-hover:shadow-xl">
                   {icon}
                 </div>
 
-                <h3 className="text-xl font-bold text-navy-900 mb-3">{vehicle.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">{vehicle.desc}</p>
+                <h3 className="text-xl font-extrabold text-navy-900 mb-3 group-hover:text-navy-800">
+                  {vehicle.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                  {vehicle.desc}
+                </p>
 
-                <div className="flex gap-4 pt-4 border-t border-gray-100">
+                <div className="flex gap-5 pt-5 border-t border-gray-100 group-hover:border-gold-200 transition-colors">
                   <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                    <span className="text-xs text-gray-500 font-medium">{seats} {dict.fleet.seats}</span>
+                    <div className="w-8 h-8 bg-navy-50 rounded-lg flex items-center justify-center group-hover:bg-navy-100 transition-colors">
+                      <svg className="w-3.5 h-3.5 text-navy-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-gray-600 font-semibold">{seats} {dict.fleet.seats}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
-                    <span className="text-xs text-gray-500 font-medium">{bags} {dict.fleet.bags}</span>
+                    <div className="w-8 h-8 bg-navy-50 rounded-lg flex items-center justify-center group-hover:bg-navy-100 transition-colors">
+                      <svg className="w-3.5 h-3.5 text-navy-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-gray-600 font-semibold">{bags} {dict.fleet.bags}</span>
                   </div>
                 </div>
               </div>

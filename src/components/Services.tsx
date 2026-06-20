@@ -88,24 +88,33 @@ export default function Services({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map(({ key, icon, color, iconBg }) => {
-            const service = (dict.services as any)[key];
+          {services.map(({ key, icon, color, iconBg }, i) => {
+            const service = (dict.services as any)?.[key];
+            if (!service) return null;
             return (
               <div
                 key={key}
-                className={`group relative border-2 ${color} rounded-2xl p-6 transition-all duration-500`}
+                className={`group relative border-2 ${color} rounded-2xl p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden`}
+                style={{ animationDelay: `${i * 0.1}s` }}
               >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-current to-transparent opacity-0 group-hover:opacity-10 rounded-bl-3xl transition-opacity duration-500" />
                 <div
-                  className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-all duration-500 ${iconBg}`}
+                  className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all duration-500 ${iconBg} group-hover:scale-110 group-hover:shadow-lg`}
                 >
                   {icon}
                 </div>
-                <h3 className="text-lg font-bold text-navy-900 mb-2 group-hover:text-white transition-colors duration-500">
+                <h3 className="text-lg font-extrabold text-navy-900 mb-2.5 group-hover:text-white transition-colors duration-500">
                   {service.title}
                 </h3>
-                <p className="text-gray-500 leading-relaxed text-sm group-hover:text-white/90 transition-colors duration-500">
+                <p className="text-gray-500 leading-relaxed text-sm group-hover:text-white/85 transition-colors duration-500">
                   {service.description}
                 </p>
+                <div className="mt-4 flex items-center gap-1 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0 text-white/70">
+                  <span>{dict.cta.bookNow}</span>
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
               </div>
             );
           })}

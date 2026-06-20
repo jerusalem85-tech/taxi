@@ -5,6 +5,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-family: 'Cairo', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: 'Cairo', system-ui, sans-serif;
   }
 
   [dir="rtl"] {
@@ -16,39 +21,56 @@
     direction: ltr;
     text-align: left;
   }
+
+  ::selection {
+    background-color: #f59e0b;
+    color: #0f1d3d;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block text-center;
+    @apply bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold py-3.5 px-8 rounded-2xl transition-all duration-500 transform hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-gold-500/20 hover:shadow-xl hover:shadow-gold-500/30 inline-block text-center tracking-wide;
   }
 
   .btn-whatsapp {
-    @apply bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 text-center;
+    @apply bg-green-500 hover:bg-green-400 text-white font-bold py-3.5 px-8 rounded-2xl transition-all duration-500 transform hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-green-500/20 hover:shadow-xl hover:shadow-green-500/30 inline-flex items-center justify-center gap-2.5 text-center tracking-wide;
   }
 
   .btn-outline {
-    @apply border-2 border-gold-400 text-gold-400 font-bold py-3 px-8 rounded-xl transition-all duration-300 hover:bg-gold-400 hover:text-navy-900 inline-block text-center;
+    @apply border-2 border-gold-400/80 text-gold-400 font-bold py-3.5 px-8 rounded-2xl transition-all duration-500 hover:bg-gold-400 hover:text-navy-900 inline-block text-center tracking-wide shadow-lg shadow-gold-400/10;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-extrabold text-center mb-4;
+    @apply text-3xl md:text-4xl lg:text-5xl font-extrabold text-center mb-4 tracking-tight;
   }
 
   .section-subtitle {
-    @apply text-gray-500 text-center max-w-2xl mx-auto mb-12 text-lg;
+    @apply text-gray-500 text-center max-w-2xl mx-auto mb-14 text-base md:text-lg leading-relaxed;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl;
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
   }
 
   .jerusalem-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C4A265' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C4A265' fill-opacity='0.04'%3E%3Cpath d='M20 0 L25 5 L20 10 L15 5 Z M0 20 L5 25 L0 30 L-5 25 Z M40 20 L45 25 L40 30 L35 25 Z M20 30 L25 35 L20 40 L15 35 Z'/%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E");
   }
 
   .gold-gradient {
-    @apply bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600;
+    @apply bg-gradient-to-r from-gold-300 via-gold-500 to-gold-400;
   }
 
   .gold-text {
     @apply bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+
+  .navy-gradient {
+    @apply bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950;
   }
 }
 
@@ -57,26 +79,34 @@
     animation: float 3s ease-in-out infinite;
   }
 
+  .animate-float-delayed {
+    animation: float 3s ease-in-out 1s infinite;
+  }
+
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out;
+    animation: fadeIn 0.6s ease-out forwards;
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out;
+  .animate-fade-in-delayed {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out 0.2s forwards;
   }
 
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-gold {
+    text-shadow: 0 2px 20px rgba(245, 158, 11, 0.3);
   }
 }
