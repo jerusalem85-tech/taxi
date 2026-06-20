@@ -21,7 +21,7 @@ export default async function HomePage({
     <>
       <Hero dict={dict} locale={params.locale} />
       <Services dict={dict} locale={params.locale} />
-      <WhyChooseUs dict={dict} />
+      <WhyChooseUs dict={dict} locale={params.locale} />
       <CTA dict={dict} locale={params.locale} />
       <FloatingWhatsApp />
     </>

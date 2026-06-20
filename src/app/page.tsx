@@ -1,8 +1,8 @@
 export default function RootPage() {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="en" dir="ltr">
       <head>
-        <meta httpEquiv="refresh" content="0;url=/ar/" />
+        <meta httpEquiv="refresh" content="0;url=/en/" />
         <title>Jerusalem Taxi | تاكسي القدس | מונית ירושלים</title>
       </head>
       <body>
