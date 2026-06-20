@@ -67,7 +67,7 @@ export default function BookingContent({
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="gold-text text-sm font-semibold uppercase tracking-widest mb-2 block">
-              {locale === "ar" ? "احجز رحلتك" : locale === "he" ? "הזמן נסיעה" : "Book Your Ride"}
+              {dict.booking.overline}
             </span>
             <h1 className="text-3xl md:text-5xl font-extrabold text-navy-900 mb-4">{dict.booking.title}</h1>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">{dict.booking.subtitle}</p>

@@ -15,11 +15,19 @@
     "title": "Jerusalem Taxi",
     "subtitle": "Fast and reliable taxi service in Jerusalem and throughout Israel",
     "cta": "Book Your Taxi Now",
-    "whatsapp": "Chat on WhatsApp"
+    "whatsapp": "Chat on WhatsApp",
+    "badgeText": "Available 24/7 \u2022 \u0645\u062A\u0648\u0641\u0631 \u2022 \u05D6\u05DE\u05D9\u05DF",
+    "location": "Jerusalem",
+    "stats": {
+      "punctual": "Always Punctual",
+      "safe": "Safe & Reliable",
+      "languages": "3 Languages"
+    }
   },
   "services": {
     "title": "Our Services",
     "subtitle": "We offer a comprehensive range of transportation services to suit all your needs",
+    "overline": "What We Offer",
     "airport": {
       "title": "Airport Transfer",
       "description": "Comfortable transfers to and from Ben Gurion Airport, available 24/7 with flight tracking."
@@ -47,6 +55,12 @@
   },
   "why": {
     "title": "Why Choose Jerusalem Taxi?",
+    "overline": "Why Us",
+    "stats": {
+      "years": "Years Experience",
+      "trips": "Trips Completed",
+      "availability": "Round-the-Clock"
+    },
     "items": {
       "punctual": {
         "title": "Always Punctual",
@@ -69,6 +83,7 @@
   "booking": {
     "title": "Book Your Taxi",
     "subtitle": "Fill out the form below and we'll confirm your booking instantly via WhatsApp",
+    "overline": "Book Your Ride",
     "form": {
       "name": "Full Name",
       "phone": "Phone Number",
@@ -94,6 +109,7 @@
   "prices": {
     "title": "Approximate Prices",
     "subtitle": "Prices are approximate and may vary depending on time and road conditions",
+    "overline": "Price List",
     "currency": "ILS",
     "routes": {
       "jerusalem_airport": "Jerusalem → Ben Gurion Airport",
@@ -112,6 +128,7 @@
   "contact": {
     "title": "Contact Us",
     "subtitle": "We're here to serve you. Reach out to us in any way that suits you.",
+    "overline": "Get In Touch",
     "phone": "Phone",
     "whatsapp": "WhatsApp",
     "email": "Email",
@@ -138,11 +155,15 @@
   "cta": {
     "bookNow": "Book Now",
     "callUs": "Call Us",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "question": "Ready for Your Next Ride?"
   },
   "fleet": {
     "title": "Our Fleet",
     "subtitle": "Modern, clean, and comfortable vehicles for every need",
+    "overline": "Vehicle Fleet",
+    "seats": "seats",
+    "bags": "bags",
     "standard": { "title": "Standard Taxi", "desc": "Comfortable sedans for city rides and short trips" },
     "minivan": { "title": "Minivan", "desc": "Spacious 7-seater for families and groups" },
     "vip": { "title": "VIP Luxury", "desc": "Premium vehicles for business and special events" }
@@ -154,5 +175,11 @@
       { "text": "Used Jerusalem Taxi for a Dead Sea tour. Amazing experience, knowledgeable driver who speaks perfect English.", "name": "Sarah K.", "city": "New York" },
       { "text": "Best taxi service in Jerusalem. Fast booking via WhatsApp, fair prices, and always punctual.", "name": "Mohammed A.", "city": "East Jerusalem" }
     ]
+  },
+  "whatsapp": {
+    "message": "Hi, I want to book a taxi"
+  },
+  "servicesPage": {
+    "overline": "Our Services"
   }
 }

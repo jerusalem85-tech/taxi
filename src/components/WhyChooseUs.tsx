@@ -50,7 +50,7 @@ export default function WhyChooseUs({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <span className="text-gold-400 text-sm font-semibold uppercase tracking-widest mb-2 block">
-            {locale === "ar" ? "لماذا نحن" : locale === "he" ? "למה אנחנו" : "Why Us"}
+            {dict.why.overline}
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
             {dict.why.title}
@@ -58,7 +58,7 @@ export default function WhyChooseUs({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {items.map(({ key, icon }, index) => {
+          {items.map(({ key, icon }) => {
             const item = (dict.why.items as any)[key];
             return (
               <div key={key} className="relative group">
@@ -78,9 +78,9 @@ export default function WhyChooseUs({
 
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
           {[
-            { number: "15+", label: locale === "ar" ? "سنوات خبرة" : locale === "he" ? "שנות ניסיון" : "Years Experience" },
-            { number: "50K+", label: locale === "ar" ? "رحلة مكتملة" : locale === "he" ? "נסיעות הושלמו" : "Trips Completed" },
-            { number: "24/7", label: locale === "ar" ? "خدمة متواصلة" : locale === "he" ? "שירות רציף" : "Round-the-Clock" },
+            { number: "15+", label: dict.why.stats.years },
+            { number: "50K+", label: dict.why.stats.trips },
+            { number: "24/7", label: dict.why.stats.availability },
           ].map((stat, i) => (
             <div key={i} className="text-center p-6 rounded-2xl bg-white/5 border border-white/5">
               <div className="text-3xl font-extrabold text-gold-400 mb-1">{stat.number}</div>

@@ -1,4 +1,4 @@
-import { locales, type Locale } from "./config";
+import { locales, defaultLocale, type Locale } from "./config";
 
 const dictionaries: Record<Locale, () => Promise<any>> = {
   en: () => import("./dictionaries/en.json").then((m) => m.default),
@@ -8,7 +8,7 @@ const dictionaries: Record<Locale, () => Promise<any>> = {
 
 export async function getDictionary(locale: Locale) {
   if (!locales.includes(locale)) {
-    locale = "ar";
+    locale = defaultLocale;
   }
   return dictionaries[locale]();
 }

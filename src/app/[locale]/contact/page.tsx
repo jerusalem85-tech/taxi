@@ -37,7 +37,7 @@ export default async function ContactPage({ params }: { params: { locale: Locale
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="gold-text text-sm font-semibold uppercase tracking-widest mb-2 block">
-              {params.locale === "ar" ? "تواصل معنا" : params.locale === "he" ? "צור קשר" : "Get In Touch"}
+              {dict.contact.overline}
             </span>
             <h1 className="text-3xl md:text-5xl font-extrabold text-navy-900 mb-4">{dict.contact.title}</h1>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">{dict.contact.subtitle}</p>

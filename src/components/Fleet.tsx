@@ -46,7 +46,7 @@ export default function Fleet({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="gold-text text-sm font-semibold uppercase tracking-widest mb-2 block">
-            {locale === "ar" ? "أسطول المركبات" : locale === "he" ? "צי הרכבים" : "Vehicle Fleet"}
+            {dict.fleet.overline}
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-navy-900 mb-4">
             {dict.fleet.title}
@@ -57,7 +57,7 @@ export default function Fleet({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {vehicles.map(({ key, icon, seats, bags }, idx) => {
+          {vehicles.map(({ key, icon, seats, bags }) => {
             const vehicle = (dict.fleet as any)[key];
             return (
               <div
@@ -78,13 +78,13 @@ export default function Fleet({
                     <svg className="w-4 h-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
-                    <span className="text-xs text-gray-500 font-medium">{seats} {locale === "ar" ? "ركاب" : locale === "he" ? "נוסעים" : "seats"}</span>
+                    <span className="text-xs text-gray-500 font-medium">{seats} {dict.fleet.seats}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <svg className="w-4 h-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                     </svg>
-                    <span className="text-xs text-gray-500 font-medium">{bags} {locale === "ar" ? "حقائب" : locale === "he" ? "מזוודות" : "bags"}</span>
+                    <span className="text-xs text-gray-500 font-medium">{bags} {dict.fleet.bags}</span>
                   </div>
                 </div>
               </div>

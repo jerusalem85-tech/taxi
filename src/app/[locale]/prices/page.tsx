@@ -45,20 +45,26 @@ const prices: Record<string, { from: string; to: string; price: string; time: st
 export default async function PricesPage({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
 
+  const routeEntries = Object.entries(prices).map(([key, row]) => {
+    const routeName = (dict.prices.routes as any)[key] as string | undefined;
+    const [from, to] = routeName ? routeName.split(" → ") : [row.from, row.to];
+    return { key, from: from || row.from, to: to || row.to, price: row.price, time: row.time };
+  });
+
   return (
     <>
       <section className="pt-28 pb-20 bg-white jerusalem-pattern">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="gold-text text-sm font-semibold uppercase tracking-widest mb-2 block">
-              {params.locale === "ar" ? "الأسعار" : params.locale === "he" ? "מחירון" : "Price List"}
+              {dict.prices.overline}
             </span>
             <h1 className="text-3xl md:text-5xl font-extrabold text-navy-900 mb-4">{dict.prices.title}</h1>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">{dict.prices.subtitle}</p>
           </div>
 
           <div className="space-y-3">
-            {Object.entries(prices).map(([key, row], idx) => (
+            {routeEntries.map(({ key, from, to, price, time }) => (
               <div
                 key={key}
                 className="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-gold-200 transition-all duration-300 group"
@@ -72,15 +78,15 @@ export default async function PricesPage({ params }: { params: { locale: Locale 
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-navy-900">{row.from}</span>
+                      <span className="font-semibold text-navy-900">{from}</span>
                       <span className="text-gray-300">→</span>
-                      <span className="font-semibold text-navy-900">{row.to}</span>
+                      <span className="font-semibold text-navy-900">{to}</span>
                     </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
-                  <span className="text-gray-400 text-sm">{row.time}</span>
-                  <span className="text-gold-600 font-extrabold text-lg min-w-[100px] text-right">{row.price}</span>
+                  <span className="text-gray-400 text-sm">{time}</span>
+                  <span className="text-gold-600 font-extrabold text-lg min-w-[100px] text-right">{price}</span>
                 </div>
               </div>
             ))}

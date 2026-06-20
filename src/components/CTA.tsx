@@ -21,11 +21,7 @@ export default function CTA({
       </div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
-          {locale === "ar"
-            ? "مستعد لرحلتك القادمة؟"
-            : locale === "he"
-            ? "מוכן לנסיעה הבאה שלך?"
-            : "Ready for Your Next Ride?"}
+          {dict.cta.question}
         </h2>
         <p className="text-gray-300 mb-10 text-lg max-w-2xl mx-auto leading-relaxed">
           {dict.booking.subtitle}
@@ -35,7 +31,7 @@ export default function CTA({
             {dict.cta.bookNow}
           </Link>
           <a
-            href="https://wa.me/972502246139?text=Hi, I want to book a taxi"
+            href={`https://wa.me/972502246139?text=${encodeURIComponent(dict.whatsapp.message)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp text-lg py-4 px-10 shadow-xl shadow-green-500/25"

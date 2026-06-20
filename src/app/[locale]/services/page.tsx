@@ -106,7 +106,7 @@ export default async function ServicesPage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="gold-text text-sm font-semibold uppercase tracking-widest mb-2 block">
-              {params.locale === "ar" ? "خدماتنا" : params.locale === "he" ? "השירותים שלנו" : "Our Services"}
+              {dict.servicesPage.overline}
             </span>
             <h1 className="text-3xl md:text-5xl font-extrabold text-navy-900 mb-4">
               {dict.services.title}

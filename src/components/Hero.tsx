@@ -33,7 +33,7 @@ export default function Hero({
           <div className="inline-flex items-center gap-2 bg-gold-500/20 backdrop-blur-sm border border-gold-500/30 rounded-full px-5 py-2 mb-8 animate-float">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             <span className="text-gold-200 text-sm font-medium">
-              Available 24/7 &bull; متوفر &bull; זמין
+              {dict.hero.badgeText}
             </span>
           </div>
 
@@ -49,7 +49,7 @@ export default function Hero({
 
           <div className="flex items-center justify-center gap-4 mb-10">
             <span className="text-gold-400/60 text-sm hidden sm:inline">
-              {locale === "ar" ? "🇮🇱 القدس" : locale === "he" ? "🇮🇱 ירושלים" : "🇮🇱 Jerusalem"}
+              {`🇮🇱 ${dict.hero.location}`}
             </span>
             <span className="text-gray-500 hidden sm:inline">|</span>
             <span className="text-gold-400/60 text-sm hidden sm:inline">
@@ -70,7 +70,7 @@ export default function Hero({
               <div className="absolute inset-0 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-400 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
             </Link>
             <a
-              href="https://wa.me/972502246139?text=Hi, I want to book a taxi"
+              href={`https://wa.me/972502246139?text=${encodeURIComponent(dict.whatsapp.message)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-green-500 hover:bg-green-400 text-white font-bold text-lg py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-green-500/25 flex items-center justify-center gap-3"
@@ -84,9 +84,9 @@ export default function Hero({
 
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
             {[
-              { icon: "⏱️", title: locale === "ar" ? "دقة في المواعيد" : locale === "he" ? "דייקנות" : "Always Punctual" },
-              { icon: "🛡️", title: locale === "ar" ? "آمن وموثوق" : locale === "he" ? "בטוח ואמין" : "Safe & Reliable" },
-              { icon: "💬", title: locale === "ar" ? "3 لغات" : locale === "he" ? "3 שפות" : "3 Languages" },
+              { icon: "⏱️", title: dict.hero.stats.punctual },
+              { icon: "🛡️", title: dict.hero.stats.safe },
+              { icon: "💬", title: dict.hero.stats.languages },
             ].map(({ icon, title }) => (
               <div
                 key={title}

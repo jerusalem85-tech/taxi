@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import type { Dictionary } from "@/i18n/server";
 import type { Locale } from "@/i18n/config";
-import { localeNames, locales } from "@/i18n/config";
+import { locales } from "@/i18n/config";
 
 export default function Header({
   dict,
@@ -118,12 +119,16 @@ export default function Header({
 }
 
 function LanguageSwitcher({ locale }: { locale: Locale }) {
+  const pathname = usePathname();
+  const segments = pathname.split("/").filter(Boolean);
+  const pathWithoutLocale = segments.length > 1 ? "/" + segments.slice(1).join("/") : "";
+
   return (
     <div className="flex gap-0.5 bg-white/5 rounded-lg p-0.5">
       {locales.map((l) => (
         <Link
           key={l}
-          href={`/${l}/`}
+          href={`/${l}${pathWithoutLocale}`}
           className={`px-2.5 py-1 text-xs font-medium rounded-md transition-all ${
             locale === l
               ? "bg-gold-500 text-navy-900"
