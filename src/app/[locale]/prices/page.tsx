@@ -1,7 +1,30 @@
+import type { Metadata } from "next";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/server";
 import Link from "next/link";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+
+const siteUrl = "https://jerusalemtaxi.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locale };
+}): Promise<Metadata> {
+  const dict = await getDictionary(params.locale);
+  return {
+    title: dict.prices.title,
+    description: dict.prices.subtitle,
+    alternates: {
+      canonical: `${siteUrl}/${params.locale}/prices`,
+    },
+    openGraph: {
+      title: `${dict.prices.title} | ${dict.site.name}`,
+      description: dict.prices.subtitle,
+      url: `${siteUrl}/${params.locale}/prices`,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return [{ locale: "ar" }, { locale: "he" }, { locale: "en" }];

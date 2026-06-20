@@ -50,7 +50,7 @@ export default function Header({
           <div className="hidden md:flex items-center gap-2">
             <LanguageSwitcher locale={locale} />
             <a
-              href="https://wa.me/972500000000?text=مرحباً، أريد حجز تاكسي"
+              href="https://wa.me/972502246139?text=مرحباً، أريد حجز تاكسي"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1"
@@ -106,7 +106,7 @@ export default function Header({
                 <LanguageSwitcher locale={locale} />
               </div>
               <a
-                href="https://wa.me/972500000000?text=مرحباً، أريد حجز تاكسي"
+                href="https://wa.me/972502246139?text=مرحباً، أريد حجز تاكسي"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 mt-1 mx-2"

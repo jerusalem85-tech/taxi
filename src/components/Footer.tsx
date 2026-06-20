@@ -57,10 +57,10 @@ export default function Footer({
               <li className="flex items-center gap-2">
                 <span>📞</span>
                 <a
-                  href="tel:+972500000000"
+                  href="tel:+972502246139"
                   className="hover:text-white transition-colors"
                 >
-                  050-000-0000
+                  050-224-6139
                 </a>
               </li>
               <li className="flex items-center gap-2">

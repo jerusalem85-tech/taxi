@@ -47,7 +47,7 @@ export default function Hero({
               {dict.hero.cta}
             </Link>
             <a
-              href="https://wa.me/972500000000?text=مرحباً، أريد حجز تاكسي"
+              href="https://wa.me/972502246139?text=مرحباً، أريد حجز تاكسي"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp text-lg py-4 px-10"

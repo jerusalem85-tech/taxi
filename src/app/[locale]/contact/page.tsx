@@ -1,7 +1,30 @@
+import type { Metadata } from "next";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/server";
 import ContactForm from "@/components/ContactForm";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+
+const siteUrl = "https://jerusalemtaxi.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locale };
+}): Promise<Metadata> {
+  const dict = await getDictionary(params.locale);
+  return {
+    title: dict.contact.title,
+    description: dict.contact.subtitle,
+    alternates: {
+      canonical: `${siteUrl}/${params.locale}/contact`,
+    },
+    openGraph: {
+      title: `${dict.contact.title} | ${dict.site.name}`,
+      description: dict.contact.subtitle,
+      url: `${siteUrl}/${params.locale}/contact`,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return [{ locale: "ar" }, { locale: "he" }, { locale: "en" }];
@@ -32,10 +55,10 @@ export default async function ContactPage({
                     {dict.contact.phone}
                   </h3>
                   <a
-                    href="tel:+972500000000"
+                    href="tel:+972502246139"
                     className="text-primary-600 hover:text-primary-700 text-lg font-semibold"
                   >
-                    050-000-0000
+                    050-224-6139
                   </a>
                 </div>
               </div>
@@ -49,12 +72,12 @@ export default async function ContactPage({
                     {dict.contact.whatsapp}
                   </h3>
                   <a
-                    href="https://wa.me/972500000000?text=مرحباً، أريد حجز تاكسي"
+                    href="https://wa.me/972502246139?text=مرحباً، أريد حجز تاكسي"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-600 hover:text-green-700 text-lg font-semibold"
                   >
-                    050-000-0000
+                    050-224-6139
                   </a>
                 </div>
               </div>
