@@ -1,0 +1,143 @@
+{
+  "site": {
+    "name": "Jerusalem Taxi",
+    "tagline": "Reliable taxi service in Jerusalem and across Israel"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "booking": "Book Now",
+    "prices": "Prices",
+    "contact": "Contact",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Jerusalem Taxi",
+    "subtitle": "Fast and reliable taxi service in Jerusalem and throughout Israel",
+    "cta": "Book Your Taxi Now",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We offer a comprehensive range of transportation services to suit all your needs",
+    "airport": {
+      "title": "Airport Transfer",
+      "description": "Comfortable transfers to and from Ben Gurion Airport, available 24/7 with flight tracking."
+    },
+    "intercity": {
+      "title": "Intercity Travel",
+      "description": "Comfortable rides between all major cities: Jerusalem, Tel Aviv, Haifa, Eilat, Nazareth and more."
+    },
+    "tours": {
+      "title": "Tourist Services",
+      "description": "Explore Israel's most beautiful sites: Dead Sea, Masada, Galilee, Golan Heights, and the Red Sea."
+    },
+    "vip": {
+      "title": "VIP Service",
+      "description": "Luxury vehicles and premium service for business travelers and special occasions."
+    },
+    "daily": {
+      "title": "Everyday Taxi",
+      "description": "24/7 taxi service for getting around the city, available every day of the week."
+    },
+    "whatsapp": {
+      "title": "Quick WhatsApp Booking",
+      "description": "Book your taxi directly via WhatsApp in seconds. Fast, easy, and always available."
+    }
+  },
+  "why": {
+    "title": "Why Choose Jerusalem Taxi?",
+    "items": {
+      "punctual": {
+        "title": "Always Punctual",
+        "description": "We arrive on time, every time."
+      },
+      "drivers": {
+        "title": "Professional Drivers",
+        "description": "Licensed, experienced drivers who speak Arabic, Hebrew, and English."
+      },
+      "prices": {
+        "title": "Competitive Prices",
+        "description": "Fair and transparent pricing with no hidden fees."
+      },
+      "available": {
+        "title": "Available 24/7",
+        "description": "Our service is available around the clock, every day of the week."
+      }
+    }
+  },
+  "booking": {
+    "title": "Book Your Taxi",
+    "subtitle": "Fill out the form below and we'll confirm your booking instantly via WhatsApp",
+    "form": {
+      "name": "Full Name",
+      "phone": "Phone Number",
+      "email": "Email (optional)",
+      "from": "From",
+      "to": "To",
+      "date": "Trip Date",
+      "time": "Time",
+      "passengers": "Number of Passengers",
+      "luggage": "Number of Bags",
+      "type": "Service Type",
+      "types": {
+        "standard": "Standard Taxi",
+        "airport": "Airport Transfer",
+        "intercity": "Intercity Travel",
+        "vip": "VIP Service",
+        "tour": "Tourist Tour"
+      },
+      "notes": "Additional Notes (optional)",
+      "submit": "Book via WhatsApp"
+    }
+  },
+  "prices": {
+    "title": "Approximate Prices",
+    "subtitle": "Prices are approximate and may vary depending on time and road conditions",
+    "currency": "ILS",
+    "routes": {
+      "jerusalem_airport": "Jerusalem → Ben Gurion Airport",
+      "airport_jerusalem": "Ben Gurion Airport → Jerusalem",
+      "jerusalem_telaviv": "Jerusalem → Tel Aviv",
+      "jerusalem_haifa": "Jerusalem → Haifa",
+      "jerusalem_deadsea": "Jerusalem → Dead Sea",
+      "jerusalem_eilat": "Jerusalem → Eilat",
+      "jerusalem_nazareth": "Jerusalem → Nazareth",
+      "jerusalem_bethlehem": "Jerusalem → Bethlehem",
+      "telaviv_airport": "Tel Aviv → Ben Gurion Airport",
+      "telaviv_haifa": "Tel Aviv → Haifa",
+      "telaviv_jerusalem": "Tel Aviv → Jerusalem"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to serve you. Reach out to us in any way that suits you.",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "address": "Address",
+    "addressText": "Jerusalem, Israel",
+    "hours": "Working Hours",
+    "hoursText": "24/7 - Every day of the week",
+    "form": {
+      "name": "Name",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Jerusalem Taxi - Over 15 years of transportation experience",
+    "text": "Jerusalem Taxi is a leading transportation company based in Jerusalem, providing reliable and professional taxi services throughout Israel. With a fleet of modern vehicles and a team of multilingual professional drivers, we guarantee our clients a safe, comfortable, and punctual travel experience. Whether you need an airport transfer, an intercity trip, or a tourist tour, Jerusalem Taxi is your best choice."
+  },
+  "footer": {
+    "rights": "All Rights Reserved",
+    "quickLinks": "Quick Links"
+  },
+  "cta": {
+    "bookNow": "Book Now",
+    "callUs": "Call Us",
+    "whatsapp": "WhatsApp"
+  }
+}
