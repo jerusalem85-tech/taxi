@@ -15,9 +15,7 @@ export async function generateMetadata({
   return {
     title: dict.prices.title,
     description: dict.prices.subtitle,
-    alternates: {
-      canonical: `${siteUrl}/${params.locale}/prices`,
-    },
+    alternates: { canonical: `${siteUrl}/${params.locale}/prices` },
     openGraph: {
       title: `${dict.prices.title} | ${dict.site.name}`,
       description: dict.prices.subtitle,
@@ -30,146 +28,66 @@ export async function generateStaticParams() {
   return [{ locale: "ar" }, { locale: "he" }, { locale: "en" }];
 }
 
-const prices: Record<
-  string,
-  { from: string; to: string; price: string; time: string }
-> = {
-  jerusalem_airport: {
-    from: "القدس",
-    to: "مطار بن غوريون",
-    price: "₪250-₪300",
-    time: "~45 دقيقة",
-  },
-  airport_jerusalem: {
-    from: "مطار بن غوريون",
-    to: "القدس",
-    price: "₪250-₪300",
-    time: "~45 دقيقة",
-  },
-  jerusalem_telaviv: {
-    from: "القدس",
-    to: "تل أبيب",
-    price: "₪350-₪400",
-    time: "~60 دقيقة",
-  },
-  jerusalem_haifa: {
-    from: "القدس",
-    to: "حيفا",
-    price: "₪550-₪650",
-    time: "~90 دقيقة",
-  },
-  jerusalem_deadsea: {
-    from: "القدس",
-    to: "البحر الميت",
-    price: "₪250-₪300",
-    time: "~60 دقيقة",
-  },
-  jerusalem_eilat: {
-    from: "القدس",
-    to: "إيلات",
-    price: "₪1,200-₪1,500",
-    time: "~3.5 ساعات",
-  },
-  jerusalem_nazareth: {
-    from: "القدس",
-    to: "الناصرة",
-    price: "₪450-₪550",
-    time: "~90 دقيقة",
-  },
-  jerusalem_bethlehem: {
-    from: "القدس",
-    to: "بيت لحم",
-    price: "₪150-₪200",
-    time: "~30 دقيقة",
-  },
-  telaviv_airport: {
-    from: "تل أبيب",
-    to: "مطار بن غوريون",
-    price: "₪150-₪200",
-    time: "~25 دقيقة",
-  },
-  telaviv_haifa: {
-    from: "تل أبيب",
-    to: "حيفا",
-    price: "₪350-₪450",
-    time: "~60 دقيقة",
-  },
-  telaviv_jerusalem: {
-    from: "تل أبيب",
-    to: "القدس",
-    price: "₪350-₪400",
-    time: "~60 دقيقة",
-  },
+const prices: Record<string, { from: string; to: string; price: string; time: string }> = {
+  jerusalem_airport: { from: "Jerusalem", to: "Ben Gurion Airport", price: "₪250-₪300", time: "~45 min" },
+  airport_jerusalem: { from: "Ben Gurion Airport", to: "Jerusalem", price: "₪250-₪300", time: "~45 min" },
+  jerusalem_telaviv: { from: "Jerusalem", to: "Tel Aviv", price: "₪350-₪400", time: "~60 min" },
+  jerusalem_haifa: { from: "Jerusalem", to: "Haifa", price: "₪550-₪650", time: "~90 min" },
+  jerusalem_deadsea: { from: "Jerusalem", to: "Dead Sea", price: "₪250-₪300", time: "~60 min" },
+  jerusalem_eilat: { from: "Jerusalem", to: "Eilat", price: "₪1,200-₪1,500", time: "~3.5 hrs" },
+  jerusalem_nazareth: { from: "Jerusalem", to: "Nazareth", price: "₪450-₪550", time: "~90 min" },
+  jerusalem_bethlehem: { from: "Jerusalem", to: "Bethlehem", price: "₪150-₪200", time: "~30 min" },
+  telaviv_airport: { from: "Tel Aviv", to: "Ben Gurion Airport", price: "₪150-₪200", time: "~25 min" },
+  telaviv_haifa: { from: "Tel Aviv", to: "Haifa", price: "₪350-₪450", time: "~60 min" },
+  telaviv_jerusalem: { from: "Tel Aviv", to: "Jerusalem", price: "₪350-₪400", time: "~60 min" },
 };
 
-export default async function PricesPage({
-  params,
-}: {
-  params: { locale: Locale };
-}) {
+export default async function PricesPage({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
 
   return (
     <>
-      <section className="pt-28 pb-20 bg-gray-50">
+      <section className="pt-28 pb-20 bg-white jerusalem-pattern">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="section-title">{dict.prices.title}</h1>
-          <p className="section-subtitle">{dict.prices.subtitle}</p>
+          <div className="text-center mb-16">
+            <span className="gold-text text-sm font-semibold uppercase tracking-widest mb-2 block">
+              {params.locale === "ar" ? "الأسعار" : params.locale === "he" ? "מחירון" : "Price List"}
+            </span>
+            <h1 className="text-3xl md:text-5xl font-extrabold text-navy-900 mb-4">{dict.prices.title}</h1>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg">{dict.prices.subtitle}</p>
+          </div>
 
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-primary-500 text-white">
-                    <th className="py-4 px-6 text-sm font-semibold">
-                      {dict.booking.form.from}
-                    </th>
-                    <th className="py-4 px-6 text-sm font-semibold">
-                      {dict.booking.form.to}
-                    </th>
-                    <th className="py-4 px-6 text-sm font-semibold text-center">
-                      السعر التقريبي
-                    </th>
-                    <th className="py-4 px-6 text-sm font-semibold text-center">
-                      الوقت التقريبي
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.entries(prices).map(([key, row], idx) => {
-                    const routeName = (dict.prices.routes as any)[key];
-                    return (
-                      <tr
-                        key={key}
-                        className={`${
-                          idx % 2 === 0 ? "bg-white" : "bg-gray-50"
-                        } hover:bg-primary-50 transition-colors`}
-                      >
-                        <td className="py-4 px-6 text-gray-700 font-medium">
-                          {row.from}
-                        </td>
-                        <td className="py-4 px-6 text-gray-700 font-medium">
-                          {row.to}
-                        </td>
-                        <td className="py-4 px-6 text-primary-600 font-bold text-center">
-                          {row.price}
-                        </td>
-                        <td className="py-4 px-6 text-gray-500 text-center text-sm">
-                          {row.time}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+          <div className="space-y-3">
+            {Object.entries(prices).map(([key, row], idx) => (
+              <div
+                key={key}
+                className="flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-gold-200 transition-all duration-300 group"
+              >
+                <div className="flex items-center gap-3 mb-2 sm:mb-0">
+                  <div className="w-10 h-10 rounded-xl bg-navy-50 flex items-center justify-center text-navy-600 group-hover:bg-navy-900 group-hover:text-gold-400 transition-all duration-300 flex-shrink-0">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-navy-900">{row.from}</span>
+                      <span className="text-gray-300">→</span>
+                      <span className="font-semibold text-navy-900">{row.to}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-6">
+                  <span className="text-gray-400 text-sm">{row.time}</span>
+                  <span className="text-gold-600 font-extrabold text-lg min-w-[100px] text-right">{row.price}</span>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-12">
-            <Link
-              href={`/${params.locale}/booking/`}
-              className="btn-primary text-lg py-4 px-10"
-            >
+            <Link href={`/${params.locale}/booking/`} className="btn-primary text-lg py-4 px-10">
               {dict.cta.bookNow}
             </Link>
           </div>

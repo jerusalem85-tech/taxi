@@ -139,5 +139,20 @@
     "bookNow": "Book Now",
     "callUs": "Call Us",
     "whatsapp": "WhatsApp"
+  },
+  "fleet": {
+    "title": "Our Fleet",
+    "subtitle": "Modern, clean, and comfortable vehicles for every need",
+    "standard": { "title": "Standard Taxi", "desc": "Comfortable sedans for city rides and short trips" },
+    "minivan": { "title": "Minivan", "desc": "Spacious 7-seater for families and groups" },
+    "vip": { "title": "VIP Luxury", "desc": "Premium vehicles for business and special events" }
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "items": [
+      { "text": "Excellent service! The driver was on time and very professional. Highly recommended for airport transfers.", "name": "David M.", "city": "Tel Aviv" },
+      { "text": "Used Jerusalem Taxi for a Dead Sea tour. Amazing experience, knowledgeable driver who speaks perfect English.", "name": "Sarah K.", "city": "New York" },
+      { "text": "Best taxi service in Jerusalem. Fast booking via WhatsApp, fair prices, and always punctual.", "name": "Mohammed A.", "city": "East Jerusalem" }
+    ]
   }
 }
