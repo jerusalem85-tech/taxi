@@ -20,7 +20,7 @@ export default function StructuredData() {
     openingHours: "Mo-Su",
     priceRange: "₪150-₪1500",
     sameAs: [
-      "https://wa.me/972502246139",
+      "https://wa.me/972548338706",
     ],
     availableLanguage: ["Arabic", "Hebrew", "English"],
     makesOffer: [

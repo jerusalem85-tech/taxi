@@ -48,7 +48,7 @@ function FAQSchema({ locale }: { locale: Locale }) {
     { question: "How much is a taxi from Ben Gurion Airport to Jerusalem?", answer: "A taxi from Ben Gurion Airport to Jerusalem costs approximately ₪250-₪300 and takes about 45 minutes." },
     { question: "How much is a taxi from Jerusalem to Tel Aviv?", answer: "A taxi from Jerusalem to Tel Aviv costs approximately ₪350-₪400 and takes about 60 minutes." },
     { question: "Do you offer fixed prices or meter?", answer: "We offer fixed transparent prices with no hidden fees. You'll know the price before the ride starts." },
-    { question: "How do I book a taxi in Jerusalem?", answer: "You can book via WhatsApp at 050-224-6139, through our online booking form, or by calling us directly. We're available 24/7." },
+    { question: "How do I book a taxi in Jerusalem?", answer: "You can book via WhatsApp at 054-833-8706, through our online booking form, or by calling us directly. We're available 24/7." },
     { question: "Do you have English-speaking drivers?", answer: "Yes, our drivers speak Arabic, Hebrew, and English to serve international tourists." },
   ];
   const schema = {

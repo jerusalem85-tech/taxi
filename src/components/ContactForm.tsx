@@ -10,7 +10,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
     const phoneEl = form.elements.namedItem("phone") as HTMLInputElement;
     const msgEl = form.elements.namedItem("message") as HTMLTextAreaElement;
     const message = `*${dict.contact.title}*\n\n*${dict.contact.form.name}:* ${nameEl.value}\n*${dict.contact.form.phone}:* ${phoneEl.value}\n*${dict.contact.form.message}:* ${msgEl.value}`;
-    window.open(`https://wa.me/972502246139?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/972548338706?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const inputClass =

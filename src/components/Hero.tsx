@@ -68,10 +68,10 @@ export default function Hero({
             <span className="text-gray-400 hidden sm:inline">{dict.contact.hoursText}</span>
             <span className="text-white/20 hidden sm:inline">|</span>
             <a
-              href="tel:+972502246139"
+              href="tel:+972548338706"
               className="text-gold-400/80 hover:text-gold-300 font-semibold transition-colors"
             >
-              050-224-6139
+              054-833-8706
             </a>
           </div>
 
@@ -87,7 +87,7 @@ export default function Hero({
               <div className="absolute inset-0 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-300 -translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
             </Link>
             <a
-              href={`https://wa.me/972502246139?text=${encodeURIComponent(dict.whatsapp.message)}`}
+              href={`https://wa.me/972548338706?text=${encodeURIComponent(dict.whatsapp.message)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-green-500 hover:bg-green-400 text-white font-extrabold text-lg py-4 px-10 rounded-2xl transition-all duration-500 transform hover:scale-[1.03] active:scale-[0.98] shadow-2xl shadow-green-500/30 hover:shadow-green-400/40 flex items-center justify-center gap-2.5"

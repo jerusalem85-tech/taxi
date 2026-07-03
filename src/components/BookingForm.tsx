@@ -12,7 +12,7 @@ export default function BookingContent({
   dict: Dictionary;
   locale: Locale;
 }) {
-  const phoneNumber = "972502246139";
+  const phoneNumber = "972548338706";
 
   const [form, setForm] = useState({
     name: "",

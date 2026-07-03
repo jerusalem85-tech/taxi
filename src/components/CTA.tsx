@@ -31,7 +31,7 @@ export default function CTA({
             {dict.cta.bookNow}
           </Link>
           <a
-            href={`https://wa.me/972502246139?text=${encodeURIComponent(dict.whatsapp.message)}`}
+            href={`https://wa.me/972548338706?text=${encodeURIComponent(dict.whatsapp.message)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp text-lg py-4 px-10 shadow-xl shadow-green-500/25"

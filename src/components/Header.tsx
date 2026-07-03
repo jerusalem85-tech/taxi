@@ -55,13 +55,13 @@ export default function Header({
           <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher locale={locale} />
             <a
-              href="tel:+972502246139"
+              href="tel:+972548338706"
               className="text-gray-300 hover:text-gold-400 text-sm font-medium transition-colors"
             >
-              050-224-6139
+              054-833-8706
             </a>
             <a
-              href="https://wa.me/972502246139?text=Hi, I want to book a taxi"
+              href="https://wa.me/972548338706?text=Hi, I want to book a taxi"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-400 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-1.5"
@@ -105,7 +105,7 @@ export default function Header({
                 <LanguageSwitcher locale={locale} />
               </div>
               <a
-                href="https://wa.me/972502246139?text=Hi, I want to book a taxi"
+                href="https://wa.me/972548338706?text=Hi, I want to book a taxi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-400 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 mx-2 mt-1"

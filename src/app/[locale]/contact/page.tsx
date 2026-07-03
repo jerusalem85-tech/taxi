@@ -54,8 +54,8 @@ export default async function ContactPage({ params }: { params: { locale: Locale
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
             <div className="space-y-6">
               {[
-                { icon: "📞", bg: "bg-navy-50", label: dict.contact.phone, value: "050-224-6139", href: "tel:+972502246139", color: "text-navy-600" },
-                { icon: "💬", bg: "bg-green-50", label: dict.contact.whatsapp, value: "050-224-6139", href: "https://wa.me/972502246139", color: "text-green-600" },
+                { icon: "📞", bg: "bg-navy-50", label: dict.contact.phone, value: "054-833-8706", href: "tel:+972548338706", color: "text-navy-600" },
+                { icon: "💬", bg: "bg-green-50", label: dict.contact.whatsapp, value: "054-833-8706", href: "https://wa.me/972548338706", color: "text-green-600" },
                 { icon: "✉️", bg: "bg-blue-50", label: dict.contact.email, value: "info@jerusalemtaxi.com", href: "mailto:info@jerusalemtaxi.com", color: "text-blue-600" },
               ].map(({ icon, bg, label, value, href, color }) => (
                 <div key={label} className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-gold-200 transition-all">

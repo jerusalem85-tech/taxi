@@ -63,10 +63,10 @@ export default function Footer({
                   📞
                 </span>
                 <a
-                  href="tel:+972502246139"
+                  href="tel:+972548338706"
                   className="hover:text-gold-400 transition-colors"
                 >
-                  050-224-6139
+                  054-833-8706
                 </a>
               </li>
               <li className="flex items-center gap-3">

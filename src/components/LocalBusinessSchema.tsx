@@ -37,7 +37,7 @@ export default function LocalBusinessSchema() {
       { "@type": "City", name: "Nazareth" },
       { "@type": "City", name: "Bethlehem" },
     ],
-    sameAs: ["https://wa.me/972502246139"],
+    sameAs: ["https://wa.me/972548338706"],
   };
 
   return (
