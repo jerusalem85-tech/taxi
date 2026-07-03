@@ -24,10 +24,12 @@ export default function Header({
     { href: `/${locale}/prices/`, label: dict.nav.prices },
     { href: `/${locale}/booking/`, label: dict.nav.booking },
     { href: `/${locale}/contact/`, label: dict.nav.contact },
+    { href: `/${locale}/accessibility/`, label: dict.nav.accessibility },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-white/10">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link

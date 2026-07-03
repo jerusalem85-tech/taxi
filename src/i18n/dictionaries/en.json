@@ -10,7 +10,8 @@
     "prices": "Prices",
     "contact": "Contact",
     "about": "About",
-    "tourism": "Tourism"
+    "tourism": "Tourism",
+    "accessibility": "Accessibility"
   },
   "hero": {
     "title": "Jerusalem Taxi",
@@ -182,5 +183,38 @@
   },
   "servicesPage": {
     "overline": "Our Services"
+  },
+  "accessibility": {
+    "title": "Accessibility Statement",
+    "subtitle": "We are committed to making our website accessible to all users",
+    "overline": "Accessibility",
+    "commitment": "Our Commitment",
+    "commitmentText": "Jerusalem Taxi is committed to ensuring digital accessibility for all users, including people with disabilities. We continuously work to improve the user experience and apply the relevant accessibility standards.",
+    "standards": "Accessibility Standards",
+    "standardsText": "This website conforms to Israeli Standard 5568 (WCAG 2.0 Level AA) and the Equal Rights for Persons with Disabilities Law 1998. Our site is designed to be accessible to users with visual, hearing, motor, and cognitive disabilities.",
+    "features": "Accessibility Features",
+    "featuresList": [
+      "Keyboard navigation support",
+      "Screen reader compatible (NVDA, JAWS, VoiceOver)",
+      "Text size adjustment controls",
+      "High contrast mode",
+      "Alternative text for all images",
+      "Clear heading hierarchy",
+      "Sufficient color contrast ratios",
+      "Skip to main content link"
+    ],
+    "coordinator": "Accessibility Coordinator",
+    "coordinatorText": "For any accessibility requests or feedback, please contact our Accessibility Coordinator:",
+    "coordinatorName": "Sameh",
+    "coordinatorEmail": "sameh@jerusalemtaxi.com",
+    "coordinatorPhone": "054-833-8706",
+    "complaints": "How to Submit a Complaint",
+    "complaintsText": "If you encounter an accessibility issue on our website, please contact us by phone or email. We will respond within 14 business days.",
+    "complaintsAlt": "Alternatively, you may file a complaint with the Israeli Equal Rights Commission for Persons with Disabilities:",
+    "commissionName": "Commission for Equal Rights of Persons with Disabilities",
+    "commissionAddress": "POB 34255, Shatner branch, Jerusalem 9134100",
+    "commissionPhone": "073-3925999",
+    "commissionInfo": "*6763",
+    "lastUpdated": "Last updated: July 2026"
   }
 }

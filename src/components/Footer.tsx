@@ -17,6 +17,7 @@ export default function Footer({
     { href: `/${locale}/prices/`, label: dict.nav.prices },
     { href: `/${locale}/booking/`, label: dict.nav.booking },
     { href: `/${locale}/contact/`, label: dict.nav.contact },
+    { href: `/${locale}/accessibility/`, label: dict.nav.accessibility },
   ];
 
   return (

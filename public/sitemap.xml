@@ -151,4 +151,25 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://jerusalemtaxi.com/ar/contact/"/>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://jerusalemtaxi.com/en/accessibility/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jerusalemtaxi.com/en/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://jerusalemtaxi.com/ar/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://jerusalemtaxi.com/he/accessibility/"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jerusalemtaxi.com/ar/accessibility/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://jerusalemtaxi.com/ar/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jerusalemtaxi.com/en/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://jerusalemtaxi.com/he/accessibility/"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jerusalemtaxi.com/he/accessibility/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://jerusalemtaxi.com/he/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jerusalemtaxi.com/en/accessibility/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://jerusalemtaxi.com/ar/accessibility/"/>
+    <priority>0.5</priority>
+  </url>
 </urlset>

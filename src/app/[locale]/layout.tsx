@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import StructuredData from "@/components/StructuredData";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import { getDictionary } from "@/i18n/server";
@@ -123,7 +124,8 @@ export default async function LocaleLayout({
       </head>
       <body className={`${cairo.variable} bg-white text-gray-900 antialiased`}>
         <Header dict={dict} locale={params.locale} />
-        <main className="min-h-screen">{children}</main>
+        <AccessibilityToolbar />
+        <main id="main-content" className="min-h-screen">{children}</main>
         <Footer dict={dict} locale={params.locale} />
       </body>
     </html>
