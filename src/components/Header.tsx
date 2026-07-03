@@ -20,6 +20,7 @@ export default function Header({
     { href: `/${locale}/`, label: dict.nav.home },
     { href: `/${locale}/about/`, label: dict.nav.about },
     { href: `/${locale}/services/`, label: dict.nav.services },
+    { href: `/${locale}/tourism/`, label: dict.nav.tourism },
     { href: `/${locale}/prices/`, label: dict.nav.prices },
     { href: `/${locale}/booking/`, label: dict.nav.booking },
     { href: `/${locale}/contact/`, label: dict.nav.contact },

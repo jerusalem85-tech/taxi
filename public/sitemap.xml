@@ -89,6 +89,27 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jerusalemtaxi.com/en/tourism/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jerusalemtaxi.com/en/tourism/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://jerusalemtaxi.com/ar/tourism/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://jerusalemtaxi.com/he/tourism/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jerusalemtaxi.com/ar/tourism/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://jerusalemtaxi.com/ar/tourism/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jerusalemtaxi.com/en/tourism/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://jerusalemtaxi.com/he/tourism/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jerusalemtaxi.com/he/tourism/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://jerusalemtaxi.com/he/tourism/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jerusalemtaxi.com/en/tourism/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://jerusalemtaxi.com/ar/tourism/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jerusalemtaxi.com/en/booking/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://jerusalemtaxi.com/en/booking/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://jerusalemtaxi.com/ar/booking/"/>
