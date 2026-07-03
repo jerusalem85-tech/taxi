@@ -30,14 +30,14 @@ export default function AccessibilityToolbar() {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 left-6 z-50 w-14 h-14 bg-navy-900 text-gold-400 rounded-full shadow-2xl hover:bg-navy-800 hover:scale-110 transition-all duration-300 flex items-center justify-center text-2xl"
+        className="fixed bottom-6 right-28 z-50 w-14 h-14 bg-navy-900 text-gold-400 rounded-full shadow-2xl hover:bg-navy-800 hover:scale-110 transition-all duration-300 flex items-center justify-center text-2xl"
         aria-label="Accessibility options"
       >
         ♿
       </button>
 
       {open && (
-        <div className="fixed bottom-24 left-6 z-50 bg-white border border-gray-200 rounded-xl shadow-xl p-4 w-56">
+        <div className="fixed bottom-24 right-6 z-50 bg-white border border-gray-200 rounded-xl shadow-xl p-4 w-64">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-bold text-navy-900">Accessibility</span>
             <button onClick={() => setOpen(false)} className="text-gray-400 hover:text-gray-600 text-sm">&times;</button>
