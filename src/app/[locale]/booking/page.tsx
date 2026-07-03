@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/server";
 import BookingForm from "@/components/BookingForm";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const siteUrl = "https://jerusalemtaxi.com";
 
@@ -36,5 +37,16 @@ export default async function BookingPage({
 }) {
   const dict = await getDictionary(params.locale);
 
-  return <BookingForm dict={dict} locale={params.locale} />;
+  return (
+    <>
+      <Breadcrumbs
+        items={[
+          { label: dict.nav.home, href: "/" },
+          { label: dict.booking.title },
+        ]}
+        locale={params.locale}
+      />
+      <BookingForm dict={dict} locale={params.locale} />
+    </>
+  );
 }

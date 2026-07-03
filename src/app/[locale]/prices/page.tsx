@@ -3,6 +3,7 @@ import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/server";
 import Link from "next/link";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const siteUrl = "https://jerusalemtaxi.com";
 
@@ -42,6 +43,26 @@ const prices: Record<string, { from: string; to: string; price: string; time: st
   telaviv_jerusalem: { from: "Tel Aviv", to: "Jerusalem", price: "₪350-₪400", time: "~60 min" },
 };
 
+function FAQSchema({ locale }: { locale: Locale }) {
+  const faq = [
+    { question: "How much is a taxi from Ben Gurion Airport to Jerusalem?", answer: "A taxi from Ben Gurion Airport to Jerusalem costs approximately ₪250-₪300 and takes about 45 minutes." },
+    { question: "How much is a taxi from Jerusalem to Tel Aviv?", answer: "A taxi from Jerusalem to Tel Aviv costs approximately ₪350-₪400 and takes about 60 minutes." },
+    { question: "Do you offer fixed prices or meter?", answer: "We offer fixed transparent prices with no hidden fees. You'll know the price before the ride starts." },
+    { question: "How do I book a taxi in Jerusalem?", answer: "You can book via WhatsApp at 050-224-6139, through our online booking form, or by calling us directly. We're available 24/7." },
+    { question: "Do you have English-speaking drivers?", answer: "Yes, our drivers speak Arabic, Hebrew, and English to serve international tourists." },
+  ];
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
+}
+
 export default async function PricesPage({ params }: { params: { locale: Locale } }) {
   const dict = await getDictionary(params.locale);
 
@@ -53,7 +74,15 @@ export default async function PricesPage({ params }: { params: { locale: Locale 
 
   return (
     <>
-      <section className="pt-28 pb-20 bg-white jerusalem-pattern">
+      <FAQSchema locale={params.locale} />
+      <Breadcrumbs
+        items={[
+          { label: dict.nav.home, href: "/" },
+          { label: dict.prices.title },
+        ]}
+        locale={params.locale}
+      />
+      <section className="pt-24 pb-20 bg-white jerusalem-pattern">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="gold-text text-sm font-semibold uppercase tracking-widest mb-2 block">
@@ -99,7 +128,7 @@ export default async function PricesPage({ params }: { params: { locale: Locale 
           </div>
         </div>
       </section>
-      <FloatingWhatsApp />
+      <FloatingWhatsApp dict={dict} />
     </>
   );
 }

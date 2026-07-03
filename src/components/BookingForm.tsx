@@ -139,7 +139,7 @@ export default function BookingContent({
           </form>
         </div>
       </section>
-      <FloatingWhatsApp />
+      <FloatingWhatsApp dict={dict} />
     </>
   );
 }

@@ -3,6 +3,7 @@ import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/server";
 import ContactForm from "@/components/ContactForm";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const siteUrl = "https://jerusalemtaxi.com";
 
@@ -33,7 +34,14 @@ export default async function ContactPage({ params }: { params: { locale: Locale
 
   return (
     <>
-      <section className="pt-28 pb-20 bg-white jerusalem-pattern min-h-screen">
+      <Breadcrumbs
+        items={[
+          { label: dict.nav.home, href: "/" },
+          { label: dict.contact.title },
+        ]}
+        locale={params.locale}
+      />
+      <section className="pt-24 pb-20 bg-white jerusalem-pattern min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="gold-text text-sm font-semibold uppercase tracking-widest mb-2 block">
@@ -85,7 +93,7 @@ export default async function ContactPage({ params }: { params: { locale: Locale
           </div>
         </div>
       </section>
-      <FloatingWhatsApp />
+      <FloatingWhatsApp dict={dict} />
     </>
   );
 }

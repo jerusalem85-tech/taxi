@@ -18,6 +18,7 @@ export default function Header({
 
   const navItems = [
     { href: `/${locale}/`, label: dict.nav.home },
+    { href: `/${locale}/about/`, label: dict.nav.about },
     { href: `/${locale}/services/`, label: dict.nav.services },
     { href: `/${locale}/prices/`, label: dict.nav.prices },
     { href: `/${locale}/booking/`, label: dict.nav.booking },

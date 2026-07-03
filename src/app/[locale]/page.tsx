@@ -27,7 +27,7 @@ export default async function HomePage({
       <WhyChooseUs dict={dict} locale={params.locale} />
       <Testimonials dict={dict} />
       <CTA dict={dict} locale={params.locale} />
-      <FloatingWhatsApp />
+      <FloatingWhatsApp dict={dict} />
     </>
   );
 }

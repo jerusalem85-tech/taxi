@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        cairo: ["var(--font-cairo)", "system-ui", "sans-serif"],
+      },
       colors: {
         primary: {
           50: "#fefce8",

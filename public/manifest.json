@@ -1,0 +1,39 @@
+{
+  "name": "Jerusalem Taxi - Reliable Taxi Service in Jerusalem",
+  "short_name": "Jerusalem Taxi",
+  "description": "Reliable 24/7 taxi service in Jerusalem and across Israel. Airport transfers, intercity travel, tourist tours.",
+  "start_url": "/en/",
+  "display": "standalone",
+  "background_color": "#0f1d3d",
+  "theme_color": "#0f1d3d",
+  "orientation": "portrait",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["transportation", "travel", "taxi"],
+  "shortcuts": [
+    {
+      "name": "Book a Taxi",
+      "short_name": "Book",
+      "description": "Book a taxi instantly",
+      "url": "/en/booking/"
+    },
+    {
+      "name": "Call Us",
+      "short_name": "Call",
+      "description": "Call Jerusalem Taxi",
+      "url": "tel:+972502246139"
+    }
+  ]
+}

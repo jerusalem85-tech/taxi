@@ -5,11 +5,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Cairo', system-ui, sans-serif;
+    font-family: var(--font-cairo), system-ui, sans-serif;
   }
 
   body {
-    font-family: 'Cairo', system-ui, sans-serif;
+    font-family: var(--font-cairo), system-ui, sans-serif;
   }
 
   [dir="rtl"] {

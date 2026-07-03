@@ -7,6 +7,7 @@ import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import { getDictionary } from "@/i18n/server";
 import { localeDirections, type Locale } from "@/i18n/config";
 import { ReactNode } from "react";
+import { cairo } from "@/lib/fonts";
 
 const siteUrl = "https://jerusalemtaxi.com";
 
@@ -112,16 +113,15 @@ export default async function LocaleLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="sitemap" href="/sitemap.xml" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="preload" as="image" href="https://images.unsplash.com/photo-1597935258735-206d1c7f9e24?w=1920&q=85" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <StructuredData />
         <LocalBusinessSchema />
       </head>
-      <body className="bg-white text-gray-900 antialiased">
+      <body className={`${cairo.variable} bg-white text-gray-900 antialiased`}>
         <Header dict={dict} locale={params.locale} />
         <main className="min-h-screen">{children}</main>
         <Footer dict={dict} locale={params.locale} />
