@@ -3,7 +3,7 @@ export interface TourismCompany {
   name: string;
   nameAr?: string;
   nameHe?: string;
-  category: "travel_agency" | "hotel" | "tour_operator" | "tourist_info" | "guide" | "hospital" | "restaurant";
+  category: "travel_agency" | "hotel" | "tour_operator" | "tourist_info" | "guide" | "hospital" | "restaurant" | "shopping_mall";
   phone?: string;
   phone2?: string;
   email?: string;
@@ -830,6 +830,90 @@ export const tourismCompanies: TourismCompany[] = [
     address: "34 Salah Eddin St",
     area: "East Jerusalem",
   },
+
+  // ===== Shopping Malls =====
+  {
+    id: "mamilla-mall",
+    name: "Mamilla Mall (Alrov Mamilla Avenue)",
+    nameAr: "مول الماميلا",
+    nameHe: "קניון ממילא",
+    category: "shopping_mall",
+    phone: "02-636-0000",
+    website: "https://alrovmamilla.com",
+    address: "Yitzhak Kariv 4, Jaffa Gate",
+    area: "Jerusalem",
+  },
+  {
+    id: "malha-mall",
+    name: "Azrieli Mall Jerusalem (Malha Mall)",
+    nameAr: "مول المالحة - عزرائيلي",
+    nameHe: "קניון עזריאלי ירושלים",
+    category: "shopping_mall",
+    phone: "02-679-1333",
+    website: "https://www.azrielimalls.co.il",
+    address: "1 Agudat Sport Beitar St",
+    area: "Jerusalem",
+  },
+  {
+    id: "hadar-mall",
+    name: "Hadar Shopping Center",
+    nameAr: "مركز هدار التجاري",
+    nameHe: "קניון הדר",
+    category: "shopping_mall",
+    phone: "02-672-6660",
+    address: "26 Pierre Koenig St, Talpiot",
+    area: "Jerusalem",
+  },
+  {
+    id: "lev-talpiot",
+    name: "Lev Talpiot Mall",
+    nameAr: "مول ليف تالبيوت",
+    nameHe: "קניון לב תלפיות",
+    category: "shopping_mall",
+    phone: "02-678-8888",
+    address: "17 HaUman St, Talpiot",
+    area: "Jerusalem",
+  },
+  {
+    id: "clal-center",
+    name: "Clal Center",
+    nameAr: "مركز كلال التجاري",
+    nameHe: "קניון כלל",
+    category: "shopping_mall",
+    phone: "02-624-1010",
+    address: "97 Jaffa St, Downtown",
+    area: "Jerusalem",
+  },
+  {
+    id: "barta-shopping",
+    name: "Barta Shopping Center",
+    nameAr: "مركز بارطة التجاري",
+    category: "shopping_mall",
+    phone: "02-628-2247",
+    address: "Salah Eddin St",
+    area: "East Jerusalem",
+  },
+  {
+    id: "canyon-gilo",
+    name: "Canyon Gilo Mall",
+    nameAr: "مول جيلو",
+    nameHe: "קניון גילה",
+    category: "shopping_mall",
+    phone: "02-678-0666",
+    address: "Gilo",
+    area: "Jerusalem",
+  },
+  {
+    id: "mahane-yehuda",
+    name: "Mahane Yehuda Market (The Shuk)",
+    nameAr: "سوق الخضار - ماهان يهودا",
+    nameHe: "שוק מחנה יהודה",
+    category: "shopping_mall",
+    phone: "02-623-1751",
+    website: "https://en.machne.co.il",
+    address: "Mahane Yehuda, Downtown",
+    area: "Jerusalem",
+  },
 ];
 
 export const categoryLabels = {
@@ -840,6 +924,7 @@ export const categoryLabels = {
   guide: "Private Guides",
   hospital: "Hospitals",
   restaurant: "Restaurants",
+  shopping_mall: "Shopping Malls",
 } as const;
 
 export const categoryIcons = {
@@ -850,4 +935,5 @@ export const categoryIcons = {
   guide: "👤",
   hospital: "🏥",
   restaurant: "🍽️",
+  shopping_mall: "🛍️",
 } as const;
