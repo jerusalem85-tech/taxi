@@ -181,6 +181,27 @@
   "whatsapp": {
     "message": "היי, אני רוצה להזמין מונית"
   },
+  "tourismPage": {
+    "overline": "מדריך תיירות",
+    "title": "מדריך תיירות בירושלים",
+    "description": "מדריך מלא של חברות תיירות, בתי מלון, סוכנויות נסיעות ושירותי תיירות בירושלים",
+    "searchPlaceholder": "חיפוש לפי שם, טלפון או אזור...",
+    "noResults": "לא נמצאו חברות התואמות את החיפוש שלך.",
+    "showing": "מציג",
+    "of": "מתוך",
+    "companies": "חברות",
+    "all": "הכל",
+    "categories": {
+      "travel_agency": "סוכנויות נסיעות",
+      "hotel": "בתי מלון",
+      "tour_operator": "חברות סיורים",
+      "tourist_info": "מידע תיירותי",
+      "guide": "מדריכים פרטיים",
+      "hospital": "בתי חולים",
+      "restaurant": "מסעדות",
+      "shopping_mall": "מרכזים מסחריים"
+    }
+  },
   "servicesPage": {
     "overline": "השירותים שלנו"
   },

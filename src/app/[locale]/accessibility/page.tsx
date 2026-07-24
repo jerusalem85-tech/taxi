@@ -1,5 +1,26 @@
+import type { Metadata } from "next";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/server";
+
+const siteUrl = "https://jerusalemtaxi.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locale };
+}): Promise<Metadata> {
+  const dict = await getDictionary(params.locale);
+  return {
+    title: dict.accessibility.title,
+    description: dict.accessibility.subtitle,
+    alternates: { canonical: `${siteUrl}/${params.locale}/accessibility` },
+    openGraph: {
+      title: `${dict.accessibility.title} | ${dict.site.name}`,
+      description: dict.accessibility.subtitle,
+      url: `${siteUrl}/${params.locale}/accessibility`,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return [{ locale: "ar" }, { locale: "he" }, { locale: "en" }];

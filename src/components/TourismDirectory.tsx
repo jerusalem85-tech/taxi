@@ -3,8 +3,9 @@
 import { useState, useMemo } from "react";
 import { tourismCompanies, categoryLabels, categoryIcons } from "@/data/tourism-directory";
 import type { Dictionary } from "@/i18n/server";
+import type { Locale } from "@/i18n/config";
 
-export default function TourismDirectory({ dict }: { dict: Dictionary }) {
+export default function TourismDirectory({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
@@ -26,18 +27,21 @@ export default function TourismDirectory({ dict }: { dict: Dictionary }) {
     });
   }, [search, activeCategory]);
 
+  const t = dict.tourismPage;
+  const categoriesTranslated = t.categories;
+
   return (
     <section className="py-20 bg-white jerusalem-pattern min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="gold-text text-sm font-semibold uppercase tracking-widest mb-2 block">
-            Jerusalem Tourism Directory
+            {t.overline}
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-navy-900 mb-4">
-            دليل السياحة في القدس
+            {t.title}
           </h1>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-            Complete directory of tourism companies, hotels, travel agencies, and tourist services in Jerusalem
+            {t.description}
           </p>
         </div>
 
@@ -50,7 +54,7 @@ export default function TourismDirectory({ dict }: { dict: Dictionary }) {
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search by name, phone, or area..."
+              placeholder={t.searchPlaceholder}
               className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-gold-400 outline-none transition-all bg-gray-50 focus:bg-white text-sm"
             />
           </div>
@@ -59,7 +63,7 @@ export default function TourismDirectory({ dict }: { dict: Dictionary }) {
         <div className="flex flex-wrap gap-2 mb-10">
           {categories.map((cat) => {
             const isActive = activeCategory === cat;
-            const label = cat === "all" ? "All" : categoryLabels[cat as keyof typeof categoryLabels];
+            const label = cat === "all" ? t.all : categoriesTranslated[cat as keyof typeof categoriesTranslated];
             const icon = cat === "all" ? "📋" : categoryIcons[cat as keyof typeof categoryIcons];
             const count = cat === "all" ? tourismCompanies.length : tourismCompanies.filter((c) => c.category === cat).length;
             return (
@@ -83,7 +87,7 @@ export default function TourismDirectory({ dict }: { dict: Dictionary }) {
         {filtered.length === 0 ? (
           <div className="text-center py-20">
             <div className="text-4xl mb-4">🔍</div>
-            <p className="text-gray-500 text-lg">No companies found matching your search.</p>
+            <p className="text-gray-500 text-lg">{t.noResults}</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -96,14 +100,16 @@ export default function TourismDirectory({ dict }: { dict: Dictionary }) {
                   <div className="flex items-center gap-2.5">
                     <span className="text-xl">{categoryIcons[company.category]}</span>
                     <div>
-                      <h3 className="font-bold text-navy-900 text-sm">{company.name}</h3>
-                      {company.nameAr && (
+                      <h3 className="font-bold text-navy-900 text-sm">
+                        {locale === "ar" && company.nameAr ? company.nameAr : locale === "he" && company.nameHe ? company.nameHe : company.name}
+                      </h3>
+                      {locale !== "ar" && company.nameAr && (
                         <p className="text-xs text-gray-400">{company.nameAr}</p>
                       )}
                     </div>
                   </div>
                   <span className="text-[10px] font-semibold text-gray-400 bg-gray-50 px-2 py-1 rounded-md whitespace-nowrap">
-                    {categoryLabels[company.category]}
+                    {categoriesTranslated[company.category as keyof typeof categoriesTranslated]}
                   </span>
                 </div>
 
@@ -158,7 +164,7 @@ export default function TourismDirectory({ dict }: { dict: Dictionary }) {
         )}
 
         <div className="text-center mt-10 text-xs text-gray-400">
-          Showing {filtered.length} of {tourismCompanies.length} companies
+          {t.showing} {filtered.length} {t.of} {tourismCompanies.length} {t.companies}
         </div>
       </div>
     </section>

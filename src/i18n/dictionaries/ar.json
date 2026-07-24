@@ -181,6 +181,27 @@
   "whatsapp": {
     "message": "مرحباً، أريد حجز تاكسي"
   },
+  "tourismPage": {
+    "overline": "دليل السياحة",
+    "title": "دليل السياحة في القدس",
+    "description": "دليل شامل لشركات السياحة والفنادق ووكالات السفر والخدمات السياحية في القدس",
+    "searchPlaceholder": "بحث بالاسم أو الهاتف أو المنطقة...",
+    "noResults": "لم يتم العثور على شركات تطابق بحثك.",
+    "showing": "عرض",
+    "of": "من",
+    "companies": "شركات",
+    "all": "الكل",
+    "categories": {
+      "travel_agency": "وكالات السفر",
+      "hotel": "الفنادق",
+      "tour_operator": "شركات الجولات",
+      "tourist_info": "معلومات سياحية",
+      "guide": "مرشدون سياحيون",
+      "hospital": "المستشفيات",
+      "restaurant": "المطاعم",
+      "shopping_mall": "مراكز التسوق"
+    }
+  },
   "servicesPage": {
     "overline": "خدماتنا"
   },

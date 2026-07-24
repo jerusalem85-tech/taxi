@@ -12,13 +12,14 @@ export async function generateMetadata({
   params: { locale: Locale };
 }): Promise<Metadata> {
   const dict = await getDictionary(params.locale);
+  const t = dict.tourismPage;
   return {
-    title: "Tourism Directory | Jerusalem Taxi",
-    description: "Complete directory of tourism companies, hotels, travel agencies, and tourist services in Jerusalem, Israel. Find phone numbers and contact information.",
+    title: `${t.title} | ${dict.site.name}`,
+    description: t.description,
     alternates: { canonical: `${siteUrl}/${params.locale}/tourism` },
     openGraph: {
-      title: `Tourism Directory | ${dict.site.name}`,
-      description: "Complete directory of tourism companies, hotels, travel agencies, and tourist services in Jerusalem.",
+      title: `${t.title} | ${dict.site.name}`,
+      description: t.description,
       url: `${siteUrl}/${params.locale}/tourism`,
     },
   };
@@ -35,11 +36,11 @@ export default async function TourismPage({ params }: { params: { locale: Locale
       <Breadcrumbs
         items={[
           { label: dict.nav.home, href: "/" },
-          { label: "Tourism Directory" },
+          { label: dict.tourismPage.overline },
         ]}
         locale={params.locale}
       />
-      <TourismDirectory dict={dict} />
+      <TourismDirectory dict={dict} locale={params.locale} />
     </>
   );
 }

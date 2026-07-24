@@ -1,8 +1,15 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/server";
 import type { Locale } from "@/i18n/config";
+
+const backgrounds = [
+  { src: "/images/jerusalem.jpg", alt: "Jerusalem skyline" },
+  { src: "/images/haifa.jpg", alt: "Haifa Bahá'í Gardens" },
+  { src: "/images/eilat.jpg", alt: "Eilat Red Sea beach" },
+];
 
 export default function Hero({
   dict,
@@ -11,16 +18,44 @@ export default function Hero({
   dict: Dictionary;
   locale: Locale;
 }) {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % backgrounds.length);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 animate-fade-in"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1597935258735-206d1c7f9e24?w=1920&q=85')`,
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-900/90 via-navy-900/75 to-navy-950/90" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
+      {backgrounds.map((bg, i) => (
+        <div
+          key={bg.src}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1500 ease-in-out ${
+            i === current ? "opacity-100" : "opacity-0"
+          }`}
+          style={{
+            backgroundImage: `url('${bg.src}')`,
+            transform: i === current ? "scale(1.05)" : "scale(1)",
+            transition: "opacity 1.5s ease-in-out, transform 8s ease-out",
+          }}
+        />
+      ))}
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-900/90 via-navy-900/75 to-navy-950/90" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {backgrounds.map((bg, i) => (
+          <button
+            key={bg.src}
+            onClick={() => setCurrent(i)}
+            aria-label={`Show ${bg.alt}`}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              i === current ? "bg-gold-400 w-6" : "bg-white/40 hover:bg-white/60"
+            }`}
+          />
+        ))}
       </div>
 
       <div className="absolute inset-0 opacity-[0.03]">

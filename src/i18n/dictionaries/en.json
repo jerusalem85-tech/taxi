@@ -181,6 +181,27 @@
   "whatsapp": {
     "message": "Hi, I want to book a taxi"
   },
+  "tourismPage": {
+    "overline": "Tourism Directory",
+    "title": "Tourism Directory in Jerusalem",
+    "description": "Complete directory of tourism companies, hotels, travel agencies, and tourist services in Jerusalem",
+    "searchPlaceholder": "Search by name, phone, or area...",
+    "noResults": "No companies found matching your search.",
+    "showing": "Showing",
+    "of": "of",
+    "companies": "companies",
+    "all": "All",
+    "categories": {
+      "travel_agency": "Travel Agencies",
+      "hotel": "Hotels",
+      "tour_operator": "Tour Operators",
+      "tourist_info": "Tourist Information",
+      "guide": "Private Guides",
+      "hospital": "Hospitals",
+      "restaurant": "Restaurants",
+      "shopping_mall": "Shopping Malls"
+    }
+  },
   "servicesPage": {
     "overline": "Our Services"
   },

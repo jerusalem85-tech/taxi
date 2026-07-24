@@ -11,6 +11,9 @@ const config: Config = {
       fontFamily: {
         cairo: ["var(--font-cairo)", "system-ui", "sans-serif"],
       },
+      transitionDuration: {
+        '1500': '1500ms',
+      },
       colors: {
         primary: {
           50: "#fefce8",
