@@ -4,6 +4,7 @@ import { getDictionary } from "@/i18n/server";
 import Link from "next/link";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedPages from "@/components/RelatedPages";
 
 const siteUrl = "https://jerusalemtaxi.com";
 
@@ -129,6 +130,7 @@ export default async function PricesPage({ params }: { params: { locale: Locale 
         </div>
       </section>
       <FloatingWhatsApp dict={dict} />
+      <RelatedPages dict={dict} locale={params.locale} currentPath="/prices" />
     </>
   );
 }

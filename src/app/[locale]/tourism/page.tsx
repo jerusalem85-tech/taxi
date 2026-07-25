@@ -3,6 +3,7 @@ import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/server";
 import TourismDirectory from "@/components/TourismDirectory";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import RelatedPages from "@/components/RelatedPages";
 
 const siteUrl = "https://jerusalemtaxi.com";
 
@@ -41,6 +42,7 @@ export default async function TourismPage({ params }: { params: { locale: Locale
         locale={params.locale}
       />
       <TourismDirectory dict={dict} locale={params.locale} />
+      <RelatedPages dict={dict} locale={params.locale} currentPath="/tourism" />
     </>
   );
 }

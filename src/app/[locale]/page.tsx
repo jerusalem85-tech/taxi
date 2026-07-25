@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import RelatedPages from "@/components/RelatedPages";
 
 const siteUrl = "https://jerusalemtaxi.com";
 
@@ -57,6 +58,7 @@ export default async function HomePage({
       <Fleet dict={dict} locale={params.locale} />
       <WhyChooseUs dict={dict} locale={params.locale} />
       <Testimonials dict={dict} />
+      <RelatedPages dict={dict} locale={params.locale} currentPath="/" />
       <CTA dict={dict} locale={params.locale} />
       <FloatingWhatsApp dict={dict} />
     </>

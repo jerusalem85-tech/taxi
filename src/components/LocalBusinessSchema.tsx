@@ -7,7 +7,7 @@ export default function LocalBusinessSchema() {
     alternateName: ["تاكسي القدس", "מונית ירושלים"],
     description: "Reliable taxi service in Jerusalem and throughout Israel - airport transfers, intercity travel, VIP service, and tourist tours available 24/7.",
     url: "https://jerusalemtaxi.com",
-    telephone: "+972-50-224-6139",
+    telephone: "+972-54-833-8706",
     email: "info@jerusalemtaxi.com",
     image: "https://jerusalemtaxi.com/images/og-image.jpg",
     address: {

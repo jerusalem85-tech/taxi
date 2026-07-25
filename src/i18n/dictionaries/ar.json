@@ -237,5 +237,15 @@
     "commissionPhone": "073-3925999",
     "commissionInfo": "*6763",
     "lastUpdated": "آخر تحديث: يوليو 2026"
+  },
+  "relatedPages": {
+    "title": "صفحات ذات صلة",
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "services": "خدماتنا",
+    "prices": "الأسعار",
+    "tourism": "دليل السياحة",
+    "booking": "احجز الآن",
+    "contact": "تواصل معنا"
   }
 }
