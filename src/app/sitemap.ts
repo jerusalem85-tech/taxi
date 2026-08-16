@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { routes } from "@/data/routes";
 
 const siteUrl = "https://jerusalemtaxi.com";
 const locales = ["en", "ar", "he"] as const;
@@ -11,6 +12,8 @@ const pages = [
   { path: "booking", priority: 0.9, changefreq: "weekly" },
   { path: "contact", priority: 0.7, changefreq: "monthly" },
   { path: "accessibility", priority: 0.5, changefreq: "yearly" },
+  { path: "privacy", priority: 0.3, changefreq: "yearly" },
+  { path: "terms", priority: 0.3, changefreq: "yearly" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -39,6 +42,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: {
           languages: alternates,
         },
+      });
+    }
+  }
+
+  // Destination landing pages
+  for (const route of routes) {
+    for (const locale of locales) {
+      const alternates: Record<string, string> = {};
+      for (const altLocale of locales) {
+        alternates[altLocale] = `${siteUrl}/${altLocale}/destinations/${route.slug}/`;
+      }
+      alternates["x-default"] = `${siteUrl}/en/destinations/${route.slug}/`;
+
+      urls.push({
+        url: `${siteUrl}/${locale}/destinations/${route.slug}/`,
+        lastModified,
+        changeFrequency: "weekly",
+        priority: 0.8,
+        alternates: { languages: alternates },
       });
     }
   }

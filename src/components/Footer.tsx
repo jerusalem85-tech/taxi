@@ -18,6 +18,8 @@ export default function Footer({
     { href: `/${locale}/booking/`, label: dict.nav.booking },
     { href: `/${locale}/contact/`, label: dict.nav.contact },
     { href: `/${locale}/accessibility/`, label: dict.nav.accessibility },
+    { href: `/${locale}/privacy/`, label: dict.privacy.title },
+    { href: `/${locale}/terms/`, label: dict.terms.title },
   ];
 
   return (

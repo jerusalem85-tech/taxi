@@ -18,7 +18,7 @@
     "subtitle": "Fast and reliable taxi service in Jerusalem and throughout Israel",
     "cta": "Book Your Taxi Now",
     "whatsapp": "Chat on WhatsApp",
-    "badgeText": "Available 24/7 \u2022 \u0645\u062A\u0648\u0641\u0631 \u2022 \u05D6\u05DE\u05D9\u05DF",
+    "badgeText": "Available 24/7 • متوفر • זמין",
     "location": "Jerusalem",
     "stats": {
       "punctual": "Always Punctual",
@@ -105,7 +105,11 @@
         "tour": "Tourist Tour"
       },
       "notes": "Additional Notes (optional)",
-      "submit": "Book via WhatsApp"
+      "submit": "Book via WhatsApp",
+      "flightNumber": "Flight Number (optional)",
+      "roundTrip": "Round Trip",
+      "oneWay": "One Way",
+      "returnDate": "Return Date (optional)"
     }
   },
   "prices": {
@@ -166,16 +170,37 @@
     "overline": "Vehicle Fleet",
     "seats": "seats",
     "bags": "bags",
-    "standard": { "title": "Standard Taxi", "desc": "Comfortable sedans for city rides and short trips" },
-    "minivan": { "title": "Minivan", "desc": "Spacious 7-seater for families and groups" },
-    "vip": { "title": "VIP Luxury", "desc": "Premium vehicles for business and special events" }
+    "standard": {
+      "title": "Standard Taxi",
+      "desc": "Comfortable sedans for city rides and short trips"
+    },
+    "minivan": {
+      "title": "Minivan",
+      "desc": "Spacious 7-seater for families and groups"
+    },
+    "vip": {
+      "title": "VIP Luxury",
+      "desc": "Premium vehicles for business and special events"
+    }
   },
   "testimonials": {
     "title": "What Our Customers Say",
     "items": [
-      { "text": "Excellent service! The driver was on time and very professional. Highly recommended for airport transfers.", "name": "David M.", "city": "Tel Aviv" },
-      { "text": "Used Jerusalem Taxi for a Dead Sea tour. Amazing experience, knowledgeable driver who speaks perfect English.", "name": "Sarah K.", "city": "New York" },
-      { "text": "Best taxi service in Jerusalem. Fast booking via WhatsApp, fair prices, and always punctual.", "name": "Mohammed A.", "city": "East Jerusalem" }
+      {
+        "text": "Excellent service! The driver was on time and very professional. Highly recommended for airport transfers.",
+        "name": "David M.",
+        "city": "Tel Aviv"
+      },
+      {
+        "text": "Used Jerusalem Taxi for a Dead Sea tour. Amazing experience, knowledgeable driver who speaks perfect English.",
+        "name": "Sarah K.",
+        "city": "New York"
+      },
+      {
+        "text": "Best taxi service in Jerusalem. Fast booking via WhatsApp, fair prices, and always punctual.",
+        "name": "Mohammed A.",
+        "city": "East Jerusalem"
+      }
     ]
   },
   "whatsapp": {
@@ -247,5 +272,123 @@
     "tourism": "Tourism Directory",
     "booking": "Book Now",
     "contact": "Contact Us"
+  },
+  "destinations": {
+    "overline": "Popular Routes",
+    "title": "Popular Taxi Routes",
+    "subtitle": "Fixed, transparent prices for the most requested trips in Israel",
+    "viewAll": "View All Routes",
+    "from": "From",
+    "to": "To",
+    "duration": "Duration",
+    "distance": "Distance",
+    "price": "Price",
+    "bookRoute": "Book This Route",
+    "minutes": "min",
+    "km": "km",
+    "heroTitle": "Taxi from {from} to {to}",
+    "heroSubtitle": "Fixed-price taxi from {from} to {to}. Professional drivers, available 24/7. Book in seconds via WhatsApp.",
+    "overview": "Route Overview",
+    "priceInfo": "Price & Details",
+    "bookNow": "Book {from} → {to} Now",
+    "faqTitle": "Frequently Asked Questions",
+    "relatedRoutes": "Other Popular Routes",
+    "minutesShort": "min",
+    "howItWorks": "How It Works",
+    "step1": "Book via WhatsApp or form",
+    "step2": "Get instant confirmation",
+    "step3": "Driver arrives on time",
+    "backToHome": "Back to Home"
+  },
+  "quote": {
+    "overline": "Quick Quote",
+    "title": "Get an Instant Price Estimate",
+    "subtitle": "Select your route to see an estimated fixed price",
+    "fromLabel": "From",
+    "toLabel": "To",
+    "vehicleLabel": "Vehicle",
+    "standard": "Standard (4 seats)",
+    "minivan": "Minivan (7 seats)",
+    "vip": "VIP Luxury",
+    "estimatedPrice": "Estimated Price",
+    "bookNow": "Book via WhatsApp",
+    "note": "Final price confirmed before the ride. No hidden fees.",
+    "perTrip": "fixed price"
+  },
+  "actionBar": {
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "book": "Book"
+  },
+  "faq": {
+    "homeTitle": "Frequently Asked Questions",
+    "q1": "How do I book a taxi in Jerusalem?",
+    "a1": "Book instantly via WhatsApp at 054-833-8706, through our online booking form, or call us. We respond within minutes, 24/7.",
+    "q2": "Are your prices fixed or metered?",
+    "a2": "We offer fixed, transparent prices agreed before the ride. No hidden fees or surprises.",
+    "q3": "Do you provide airport transfers to Ben Gurion?",
+    "a3": "Yes, we provide 24/7 transfers to and from Ben Gurion Airport with flight tracking so your driver waits for you.",
+    "q4": "Do your drivers speak English?",
+    "a4": "Yes, our drivers speak Arabic, Hebrew, and English to serve both local and international customers.",
+    "q5": "Can I book a tour to the Dead Sea or Masada?",
+    "a5": "Absolutely. We offer guided and self-guided tours to the Dead Sea, Masada, Galilee, and more.",
+    "q6": "Do you have child seats or larger vehicles?",
+    "a6": "We offer minivans for up to 7 passengers and can provide child seats on request."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "overline": "Privacy",
+    "intro": "This privacy policy explains how Jerusalem Taxi collects and uses information when you use our website.",
+    "collectTitle": "Information We Collect",
+    "collectText": "We collect the information you voluntarily provide through our booking and contact forms: name, phone number, and trip details. This information is used solely to process your booking.",
+    "useTitle": "How We Use Your Information",
+    "useText": "Your information is used to confirm bookings, communicate with you about your ride, and improve our service. We do not sell or share your personal data with third parties for marketing.",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "We use analytics cookies to understand how visitors use our site. You can disable cookies in your browser settings.",
+    "contactTitle": "Contact",
+    "contactText": "For any privacy questions, contact us at info@jerusalemtaxi.com or 054-833-8706."
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "overline": "Terms",
+    "intro": "By using jerusalemtaxi.com and our services, you agree to the following terms.",
+    "serviceTitle": "Service",
+    "serviceText": "Jerusalem Taxi provides private transportation services across Israel. Prices shown are approximate and may vary based on time, traffic, and additional stops.",
+    "bookingTitle": "Bookings & Cancellations",
+    "bookingText": "Bookings are confirmed via WhatsApp or phone. Please notify us at least 2 hours before pickup for cancellations or changes at no cost.",
+    "liabilityTitle": "Liability",
+    "liabilityText": "We are not liable for delays caused by traffic, weather, or events beyond our control. Passengers are responsible for their belongings.",
+    "conductTitle": "Passenger Conduct",
+    "conductText": "Passengers are expected to treat drivers and vehicles with respect. We reserve the right to refuse service."
+  },
+  "darkMode": {
+    "toggle": "Toggle dark mode",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "currency": {
+    "toggle": "Currency",
+    "ils": "ILS",
+    "usd": "USD",
+    "eur": "EUR"
+  },
+  "analytics": {
+    "cookiesTitle": "We use cookies",
+    "cookiesText": "We use analytics to improve your experience. You can accept or decline.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "blog": {
+    "title": "Travel Guides",
+    "overline": "Guides & Tips",
+    "subtitle": "Useful travel guides for getting around Israel"
+  },
+  "navMobile": {
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "gallery": {
+    "title": "Our Vehicles",
+    "subtitle": "Modern, clean, and comfortable vehicles"
   }
 }

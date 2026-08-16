@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import type { Dictionary } from "@/i18n/server";
 import type { Locale } from "@/i18n/config";
 import { locales } from "@/i18n/config";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 export default function Header({
   dict,
@@ -56,6 +57,7 @@ export default function Header({
 
           <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher locale={locale} />
+            <DarkModeToggle dict={dict} />
             <a
               href="tel:+972548338706"
               className="text-gray-300 hover:text-gold-400 text-sm font-medium transition-colors"
@@ -105,6 +107,7 @@ export default function Header({
               ))}
               <div className="flex items-center gap-2 px-3 py-2">
                 <LanguageSwitcher locale={locale} />
+                <DarkModeToggle dict={dict} />
               </div>
               <a
                 href="https://wa.me/972548338706?text=Hi, I want to book a taxi"

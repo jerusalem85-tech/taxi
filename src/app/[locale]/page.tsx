@@ -5,10 +5,13 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Fleet from "@/components/Fleet";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import Testimonials from "@/components/Testimonials";
+import Testimonials from "@/components/TestimonialsCarousel";
 import CTA from "@/components/CTA";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import RelatedPages from "@/components/RelatedPages";
+import DestinationsSection from "@/components/DestinationsSection";
+import QuoteWidget from "@/components/QuoteWidget";
+import FAQ from "@/components/FAQ";
 
 const siteUrl = "https://jerusalemtaxi.com";
 
@@ -51,13 +54,25 @@ export default async function HomePage({
 }) {
   const dict = await getDictionary(params.locale);
 
+  const faqItems = [
+    { question: dict.faq.q1, answer: dict.faq.a1 },
+    { question: dict.faq.q2, answer: dict.faq.a2 },
+    { question: dict.faq.q3, answer: dict.faq.a3 },
+    { question: dict.faq.q4, answer: dict.faq.a4 },
+    { question: dict.faq.q5, answer: dict.faq.a5 },
+    { question: dict.faq.q6, answer: dict.faq.a6 },
+  ];
+
   return (
     <>
       <Hero dict={dict} locale={params.locale} />
       <Services dict={dict} locale={params.locale} />
+      <DestinationsSection dict={dict} locale={params.locale} />
       <Fleet dict={dict} locale={params.locale} />
       <WhyChooseUs dict={dict} locale={params.locale} />
+      <QuoteWidget dict={dict} locale={params.locale} />
       <Testimonials dict={dict} />
+      <FAQ dict={dict} items={faqItems} />
       <RelatedPages dict={dict} locale={params.locale} currentPath="/" />
       <CTA dict={dict} locale={params.locale} />
       <FloatingWhatsApp dict={dict} />

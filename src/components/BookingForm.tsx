@@ -25,6 +25,9 @@ export default function BookingContent({
     passengers: "1",
     luggage: "0",
     type: "standard",
+    flightNumber: "",
+    roundTrip: "one_way",
+    returnDate: "",
     notes: "",
   });
 
@@ -45,6 +48,8 @@ export default function BookingContent({
       `*${dict.booking.form.time}:* ${form.time}\n` +
       `*${dict.booking.form.passengers}:* ${form.passengers}\n` +
       `*${dict.booking.form.luggage}:* ${form.luggage}\n` +
+      `${form.flightNumber ? `*${dict.booking.form.flightNumber}:* ${form.flightNumber}\n` : ""}` +
+      `${form.roundTrip === "round_trip" ? `*${dict.booking.form.roundTrip}:* ✓\n*${dict.booking.form.returnDate}:* ${form.returnDate}\n` : ""}` +
       `${form.notes ? `*${dict.booking.form.notes}:* ${form.notes}\n` : ""}`;
 
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
@@ -125,6 +130,23 @@ export default function BookingContent({
                   {[0, 1, 2, 3, 4, 5, 6].map((n) => (<option key={n} value={n}>{n}</option>))}
                 </select>
               </div>
+              <div>
+                <label className={labelClass}>{dict.booking.form.flightNumber}</label>
+                <input type="text" name="flightNumber" value={form.flightNumber} onChange={handleChange} className={inputClass} placeholder="LY081" />
+              </div>
+              <div>
+                <label className={labelClass}>{(dict.booking.form as any).roundTrip || "Round Trip"}</label>
+                <select name="roundTrip" value={form.roundTrip} onChange={handleChange} className={inputClass}>
+                  <option value="one_way">{(dict.booking.form as any).oneWay || "One Way"}</option>
+                  <option value="round_trip">{(dict.booking.form as any).roundTrip || "Round Trip"}</option>
+                </select>
+              </div>
+              {form.roundTrip === "round_trip" && (
+                <div>
+                  <label className={labelClass}>{(dict.booking.form as any).returnDate || "Return Date"}</label>
+                  <input type="date" name="returnDate" min={today} value={form.returnDate} onChange={handleChange} className={inputClass} />
+                </div>
+              )}
             </div>
             <div>
               <label className={labelClass}>{dict.booking.form.notes}</label>

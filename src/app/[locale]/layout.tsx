@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AccessibilityToolbar from "@/components/AccessibilityToolbar";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import ActionBar from "@/components/ActionBar";
+import CookieConsent from "@/components/CookieConsent";
 import { getDictionary } from "@/i18n/server";
 import { localeDirections, locales, type Locale } from "@/i18n/config";
 import { ReactNode } from "react";
@@ -135,8 +137,10 @@ export default async function LocaleLayout({
       <body className={`${cairo.variable} bg-white text-gray-900 antialiased`}>
         <Header dict={dict} locale={params.locale} />
         <AccessibilityToolbar />
-        <main id="main-content" className="min-h-screen">{children}</main>
+        <main id="main-content" className="min-h-screen pb-16 md:pb-0">{children}</main>
         <Footer dict={dict} locale={params.locale} />
+        <ActionBar dict={dict} locale={params.locale} />
+        <CookieConsent dict={dict} />
       </body>
     </html>
   );
