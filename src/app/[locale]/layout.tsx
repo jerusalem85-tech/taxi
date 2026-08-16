@@ -3,12 +3,12 @@ import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AccessibilityToolbar from "@/components/AccessibilityToolbar";
-import StructuredData from "@/components/StructuredData";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import { getDictionary } from "@/i18n/server";
-import { localeDirections, type Locale } from "@/i18n/config";
+import { localeDirections, locales, type Locale } from "@/i18n/config";
 import { ReactNode } from "react";
 import { cairo } from "@/lib/fonts";
+import { notFound } from "next/navigation";
 
 const siteUrl = "https://jerusalemtaxi.com";
 
@@ -21,9 +21,9 @@ export async function generateMetadata({
   const l = params.locale as Locale;
 
   const descriptions: Record<Locale, string> = {
-    ar: "تاكسي القدس - خدمة تاكسي موثوقة 24/7 في القدس وكل إسرائيل. حجز سهل عبر واتساب. نقل مطار بن غوريون، توصيل بين المدن، جولات سياحية للبحر الميت ومسادا، خدمة VIP. أسعار تنافسية - 054-833-8706",
-    he: "מונית ירושלים - שירות מוניות אמין 24/7 בירושלים ובכל ישראל. הזמנה קלה בוואטסאפ. הסעות לנתב\"ג, נסיעות בין-עירוניות, סיורי תיירות לים המלח ומצדה, שירות VIP. מחירים תחרותיים - 054-833-8706",
-    en: "Jerusalem Taxi - Reliable 24/7 taxi service in Jerusalem and across Israel. Easy WhatsApp booking. Ben Gurion Airport transfers, intercity travel to Tel Aviv, Haifa, Eilat, tourist tours to Dead Sea & Masada, VIP service. Competitive prices - 054-833-8706",
+    ar: "تاكسي القدس - خدمة تاكسي موثوقة على مدار الساعة. نقل المطار، توصيل بين المدن، جولات البحر الميت ومسادا. حجز سهل عبر واتساب - 054-833-8706",
+    he: "מונית ירושלים - שירות מוניות אמין 24/7. הסעות לנתב\"ג, נסיעות בין-עירוניות, סיורים לים המלח ומצדה. הזמנה קלה בוואטסאפ - 054-833-8706",
+    en: "Reliable 24/7 taxi service in Jerusalem & across Israel. Airport transfers, intercity travel, Dead Sea & Masada tours. Book via WhatsApp - 054-833-8706",
   };
 
   const keywords: Record<Locale, string[]> = {
@@ -66,11 +66,11 @@ export async function generateMetadata({
     openGraph: {
       title: `${dict.site.name} - ${dict.site.tagline}`,
       description: descriptions[l],
-      url: `${siteUrl}/${l}`,
+      url: `${siteUrl}/${l}/`,
       siteName: dict.site.name,
       locale: l === "ar" ? "ar_IL" : l === "he" ? "he_IL" : "en_IL",
       type: "website",
-      images: [{ url: `${siteUrl}/images/og-image.jpg`, width: 1200, height: 630 }],
+      images: [{ url: `${siteUrl}/images/og-image.jpg`, width: 1200, height: 630, alt: dict.site.name }],
     },
     twitter: {
       card: "summary_large_image",
@@ -79,8 +79,13 @@ export async function generateMetadata({
       images: [`${siteUrl}/images/og-image.jpg`],
     },
     alternates: {
-      canonical: `${siteUrl}/${l}`,
-      languages: { ar: `${siteUrl}/ar`, he: `${siteUrl}/he`, en: `${siteUrl}/en` },
+      canonical: `${siteUrl}/${l}/`,
+      languages: {
+        ar: `${siteUrl}/ar/`,
+        he: `${siteUrl}/he/`,
+        en: `${siteUrl}/en/`,
+        "x-default": `${siteUrl}/en/`,
+      },
     },
     robots: {
       index: true,
@@ -102,6 +107,13 @@ export default async function LocaleLayout({
   children: ReactNode;
   params: { locale: Locale };
 }) {
+  // Ensure only supported locales are served; otherwise return a proper 404.
+  // Prevents arbitrary paths (e.g. /wp-login.php) from being rendered as a
+  // locale and producing indexable soft-404 pages.
+  if (!locales.includes(params.locale)) {
+    notFound();
+  }
+
   const dict = await getDictionary(params.locale);
   const dir = localeDirections[params.locale];
 
@@ -111,15 +123,13 @@ export default async function LocaleLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0f1d3d" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="sitemap" href="/sitemap.xml" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="preload" as="image" href="https://images.unsplash.com/photo-1597935258735-206d1c7f9e24?w=1920&q=85" />
-        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preload" as="image" href="/images/jerusalem.jpg" fetchPriority="high" />
         <link rel="dns-prefetch" href="https://wa.me" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <StructuredData />
         <LocalBusinessSchema />
       </head>
       <body className={`${cairo.variable} bg-white text-gray-900 antialiased`}>

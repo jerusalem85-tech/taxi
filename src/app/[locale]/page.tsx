@@ -21,21 +21,21 @@ export async function generateMetadata({
   const l = params.locale;
 
   const descriptions: Record<Locale, string> = {
-    ar: "تاكسي القدس - خدمة تاكسي موثوقة 24/7 في القدس وكل إسرائيل. حجز سهل عبر واتساب. نقل مطار بن غوريون، توصيل بين المدن، جولات سياحية للبحر الميت ومسادا، خدمة VIP. أسعار تنافسية - 054-833-8706",
-    he: "מונית ירושלים - שירות מוניות אמין 24/7 בירושלים ובכל ישראל. הזמנה קלה בוואטסאפ. הסעות לנתב\"ג, נסיעות בין-עירוניות, סיורי תיירות לים המלח ומצדה, שירות VIP. מחירים תחרותיים - 054-833-8706",
-    en: "Jerusalem Taxi - Reliable 24/7 taxi service in Jerusalem and across Israel. Easy WhatsApp booking. Ben Gurion Airport transfers, intercity travel to Tel Aviv, Haifa, Eilat, tourist tours to Dead Sea & Masada, VIP service. Competitive prices - 054-833-8706",
+    ar: "تاكسي القدس - خدمة تاكسي موثوقة على مدار الساعة. نقل المطار، توصيل بين المدن، جولات البحر الميت ومسادا. حجز سهل عبر واتساب - 054-833-8706",
+    he: "מונית ירושלים - שירות מוניות אמין 24/7. הסעות לנתב\"ג, נסיעות בין-עירוניות, סיורים לים המלח ומצדה. הזמנה קלה בוואטסאפ - 054-833-8706",
+    en: "Reliable 24/7 taxi service in Jerusalem & across Israel. Airport transfers, intercity travel, Dead Sea & Masada tours. Book via WhatsApp - 054-833-8706",
   };
 
   return {
     title: dict.site.tagline,
     description: descriptions[l],
     alternates: {
-      canonical: `${siteUrl}/${l}`,
+      canonical: `${siteUrl}/${l}/`,
     },
     openGraph: {
       title: `${dict.site.name} - ${dict.site.tagline}`,
       description: descriptions[l],
-      url: `${siteUrl}/${l}`,
+      url: `${siteUrl}/${l}/`,
     },
   };
 }
